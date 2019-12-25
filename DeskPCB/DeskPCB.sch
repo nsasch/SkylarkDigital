@@ -1,5 +1,4 @@
 EESchema Schematic File Version 4
-LIBS:DeskPCB-cache
 EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
@@ -37,7 +36,7 @@ F 3 "~" V 1300 5275 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:USB_B_Micro J5
+L DeskPCB:USB_B_Micro J5
 U 1 1 5DEA3BDD
 P 8100 3800
 F 0 "J5" H 8157 4267 50  0000 C CNN
@@ -48,7 +47,7 @@ F 3 "~" H 8250 3750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:USB_B_Micro J3
+L DeskPCB:USB_B_Micro J3
 U 1 1 5DEAE556
 P 8050 5050
 F 0 "J3" H 8107 5517 50  0000 C CNN
@@ -698,4 +697,5 @@ F 3 "" H 4650 1850 50  0001 C CNN
 	4    4650 1850
 	1    0    0    -1  
 $EndComp
+NoConn ~ 4400 5400
 $EndSCHEMATC
