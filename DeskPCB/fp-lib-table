@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name asdf)(type KiCad)(uri ${KIPRJMOD}/asdf.pretty)(options "")(descr ""))
+)
