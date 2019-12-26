@@ -1,0 +1,21 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP NID35-5
+D 3.5A/17.5W Step Down Converter Module, fixed 5V Output Voltage, 200kHz, 10.5-53V Input Voltage
+K Step-Down Converter Module DC/DC
+F http://www.meanwell.com/webapp/product/search.aspx?prod=nid35
+$ENDCMP
+#
+$CMP SP3491
+D Full duplex RS-485/RS-422, 10 Mbps, ±2kV electro-static discharge (ESD) protection, not slew-rate limited, with receiver/driver enable, 32 receiver drive capacity, SOIC-14
+K Full duplex RS-485/RS-422, 10 Mbps, ±2kV electro-static discharge (ESD) protection, not slew-rate limited, with receiver/driver enable, 32 receiver drive capacity, SOIC-14
+F https://www.maxlinear.com/ds/sp3490_sp3491.pdf
+$ENDCMP
+#
+$CMP SP491E
+D Full duplex RS-485/RS-422, 10 Mbps, ±15kV electro-static discharge (ESD) protection, not slew-rate limited, with receiver/driver enable, 32 receiver drive capacity, SOIC-14
+K Full duplex RS-485/RS-422, 10 Mbps, ±15kV electro-static discharge (ESD) protection, not slew-rate limited, with receiver/driver enable, 32 receiver drive capacity, SOIC-14
+F https://www.maxlinear.com/ds/sp490e_sp491e.pdf
+$ENDCMP
+#
+#End Doc Library

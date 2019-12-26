@@ -1,0 +1,194 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 2 2
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L power:GND #PWR?
+U 1 1 5F1E9319
+P 2150 1900
+F 0 "#PWR?" H 2150 1650 50  0001 C CNN
+F 1 "GND" H 2155 1727 50  0000 C CNN
+F 2 "" H 2150 1900 50  0001 C CNN
+F 3 "" H 2150 1900 50  0001 C CNN
+	1    2150 1900
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2150 1900 2150 2000
+Wire Wire Line
+	2550 1500 2650 1500
+Wire Wire Line
+	2650 1500 2650 1700
+Connection ~ 3050 2400
+Wire Wire Line
+	2700 2400 3050 2400
+$Comp
+L power:GND #PWR?
+U 1 1 5F1E9324
+P 2500 2400
+F 0 "#PWR?" H 2500 2150 50  0001 C CNN
+F 1 "GND" V 2505 2272 50  0000 R CNN
+F 2 "" H 2500 2400 50  0001 C CNN
+F 3 "" H 2500 2400 50  0001 C CNN
+	1    2500 2400
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 5F1E932A
+P 2600 2400
+F 0 "C?" V 2500 2400 50  0000 C CNN
+F 1 "100nF" V 2750 2400 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 2600 2400 50  0001 C CNN
+F 3 "~" H 2600 2400 50  0001 C CNN
+	1    2600 2400
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2650 2200 2550 2200
+Wire Wire Line
+	2650 2000 2650 2200
+Wire Wire Line
+	2650 1900 2550 1900
+Connection ~ 2950 1300
+Wire Wire Line
+	2650 1800 2550 1800
+Wire Wire Line
+	3050 1300 2950 1300
+$Comp
+L Device:R R?
+U 1 1 5F1E9338
+P 2550 2050
+F 0 "R?" H 2620 2096 50  0000 L CNN
+F 1 "100" H 2620 2005 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 2480 2050 50  0001 C CNN
+F 3 "~" H 2550 2050 50  0001 C CNN
+	1    2550 2050
+	-1   0    0    1   
+$EndComp
+$Comp
+L TheListener:SP3491 U?
+U 1 1 5F1E933E
+P 3050 1900
+F 0 "U?" H 2750 2450 50  0000 C CNN
+F 1 "SP3491" H 2750 2350 50  0000 C CNN
+F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 3050 1200 50  0001 C CNN
+F 3 "https://www.maxlinear.com/ds/sp3490_sp3491.pdf" H 3100 1925 50  0001 C CNN
+	1    3050 1900
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5F1E9344
+P 2550 1650
+F 0 "R?" H 2620 1696 50  0000 L CNN
+F 1 "100" H 2620 1605 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 2480 1650 50  0001 C CNN
+F 3 "~" H 2550 1650 50  0001 C CNN
+	1    2550 1650
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5F1E934A
+P 2950 1300
+F 0 "#PWR?" H 2950 1050 50  0001 C CNN
+F 1 "GND" H 2955 1127 50  0000 C CNN
+F 2 "" H 2950 1300 50  0001 C CNN
+F 3 "" H 2950 1300 50  0001 C CNN
+	1    2950 1300
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:VCC #PWR?
+U 1 1 5F1E9350
+P 3050 2400
+F 0 "#PWR?" H 3050 2250 50  0001 C CNN
+F 1 "VCC" H 3067 2573 50  0000 C CNN
+F 2 "" H 3050 2400 50  0001 C CNN
+F 3 "" H 3050 2400 50  0001 C CNN
+	1    3050 2400
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:VCC #PWR?
+U 1 1 5F1E9356
+P 3450 1800
+F 0 "#PWR?" H 3450 1650 50  0001 C CNN
+F 1 "VCC" V 3468 1927 50  0000 L CNN
+F 2 "" H 3450 1800 50  0001 C CNN
+F 3 "" H 3450 1800 50  0001 C CNN
+	1    3450 1800
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3450 1900 3900 1900
+$Comp
+L power:GND #PWR?
+U 1 1 5F1E935D
+P 3900 1900
+F 0 "#PWR?" H 3900 1650 50  0001 C CNN
+F 1 "GND" H 3905 1727 50  0000 C CNN
+F 2 "" H 3900 1900 50  0001 C CNN
+F 3 "" H 3900 1900 50  0001 C CNN
+	1    3900 1900
+	-1   0    0    1   
+$EndComp
+Connection ~ 1900 2000
+Wire Wire Line
+	2150 2000 1900 2000
+Connection ~ 1900 1800
+Connection ~ 1900 1900
+$Comp
+L Connector:RJ45 J?
+U 1 1 5F1E9367
+P 1500 1800
+F 0 "J?" H 1171 1804 50  0000 R CNN
+F 1 "RJ45" H 1171 1895 50  0000 R CNN
+F 2 "Connector_RJ:RJ45_Amphenol_54602-x08_Horizontal" V 1500 1825 50  0001 C CNN
+F 3 "~" V 1500 1825 50  0001 C CNN
+	1    1500 1800
+	1    0    0    1   
+$EndComp
+Connection ~ 2550 2200
+Wire Wire Line
+	2550 2200 1900 2200
+Connection ~ 2550 1900
+Wire Wire Line
+	2550 1900 2300 1900
+Wire Wire Line
+	2300 1900 2300 2100
+Wire Wire Line
+	2300 2100 1900 2100
+Connection ~ 2550 1800
+Wire Wire Line
+	2550 1800 2300 1800
+Wire Wire Line
+	2300 1800 2300 1600
+Wire Wire Line
+	2300 1600 1900 1600
+Connection ~ 2550 1500
+Wire Wire Line
+	1900 1500 2550 1500
+Wire Wire Line
+	1900 1700 1900 1800
+Wire Wire Line
+	1900 1800 1900 1900
+Wire Wire Line
+	1900 1900 1900 2000
+Text HLabel 3450 1700 2    50   Output ~ 0
+T
+Text HLabel 3450 2000 2    50   Output ~ 0
+R
+$EndSCHEMATC
