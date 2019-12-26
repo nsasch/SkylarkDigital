@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:Mothership-cache
 EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
@@ -101,7 +102,7 @@ U 1 1 5E797A49
 P 5800 2550
 F 0 "J1" H 5828 2526 50  0000 L CNN
 F 1 "Conn_01x02_Female" H 5828 2435 50  0000 L CNN
-F 2 "TerminalBlock_Phoenix:TerminalBlock_Phoenix_PTSM-0,5-2-2.5-H-THR_1x02_P2.50mm_Horizontal" H 5800 2550 50  0001 C CNN
+F 2 "TerminalBlock_Phoenix:TerminalBlock_Phoenix_PT-1,5-8-3.5-H_1x08_P3.50mm_Horizontal" H 5800 2550 50  0001 C CNN
 F 3 "~" H 5800 2550 50  0001 C CNN
 	1    5800 2550
 	1    0    0    -1  
@@ -275,7 +276,7 @@ F 0 "U3" H 8950 6033 60  0000 C CNN
 F 1 "Teensy3.5" H 8950 5927 60  0000 C CNN
 F 2 "Teensy:Teensy35_36" H 8850 5650 60  0001 C CNN
 F 3 "https://www.pjrc.com/teensy/card8a_rev2.pdf" H 8950 5821 60  0000 C CNN
-F 4 "https://www.pjrc.com/teensy/pinout.html" H 8950 5723 50  0000 C CNN "Pinouts"
+F 4 "" H 8950 5723 50  0000 C CNN "Pinouts"
 	1    8950 3400
 	1    0    0    -1  
 $EndComp
@@ -346,6 +347,7 @@ F 0 "C1" H 3650 4650 50  0000 L CNN
 F 1 "120uF/63V" H 3400 4550 50  0000 L CNN
 F 2 "Capacitor_SMD:CP_Elec_8x10" H 3938 4500 50  0001 C CNN
 F 3 "~" H 3900 4650 50  0001 C CNN
+F 4 "C134514" H 3900 4650 50  0001 C CNN "LCSC Part Number"
 	1    3900 4650
 	1    0    0    -1  
 $EndComp
@@ -379,9 +381,10 @@ L Device:CP1_Small C3
 U 1 1 5E93EBAD
 P 4700 4650
 F 0 "C3" H 4800 4650 50  0000 L CNN
-F 1 "22uF/35V" H 4800 4550 50  0000 L CNN
-F 2 "Capacitor_Tantalum_SMD:CP_EIA-7343-31_Kemet-D_Pad2.25x2.55mm_HandSolder" H 4738 4500 50  0001 C CNN
+F 1 "22uF/16V" H 4800 4550 50  0000 L CNN
+F 2 "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B_Pad1.50x2.35mm_HandSolder" H 4738 4500 50  0001 C CNN
 F 3 "~" H 4700 4650 50  0001 C CNN
+F 4 "C110051" H 4700 4650 50  0001 C CNN "LCSC Part Number"
 	1    4700 4650
 	1    0    0    -1  
 $EndComp
@@ -442,9 +445,10 @@ L Device:CP1_Small C2
 U 1 1 5ED22EE7
 P 4000 1700
 F 0 "C2" H 4091 1746 50  0000 L CNN
-F 1 "22uF" H 4091 1655 50  0000 L CNN
+F 1 "22uF/16V" H 4091 1655 50  0000 L CNN
 F 2 "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B_Pad1.50x2.35mm_HandSolder" H 4000 1700 50  0001 C CNN
 F 3 "~" H 4000 1700 50  0001 C CNN
+F 4 "C110051" H 4000 1700 50  0001 C CNN "LCSC Part Number"
 	1    4000 1700
 	1    0    0    -1  
 $EndComp
@@ -493,6 +497,7 @@ F 0 "U1" H 3700 1842 50  0000 C CNN
 F 1 "AMS1117-3.3" H 3700 1751 50  0000 C CNN
 F 2 "Package_TO_SOT_SMD:SOT-223-3_TabPin2" H 3700 1800 50  0001 C CNN
 F 3 "http://www.advanced-monolithic.com/pdf/ds1117.pdf" H 3800 1350 50  0001 C CNN
+F 4 "C6186" H 3700 1600 50  0001 C CNN "LCSC Part Number"
 	1    3700 1600
 	1    0    0    -1  
 $EndComp

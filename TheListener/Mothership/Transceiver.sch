@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:Mothership-cache
 EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
@@ -73,6 +74,7 @@ F 0 "C11" V 3500 2650 50  0000 C CNN
 F 1 "100nF" V 3750 2650 50  0000 C CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 3650 2650 50  0001 C CNN
 F 3 "~" H 3650 2650 50  0001 C CNN
+F 4 "C14663" H 3650 2650 50  0001 C CNN "LCSC Part Number"
 	1    3650 2650
 	-1   0    0    1   
 $EndComp
@@ -103,6 +105,7 @@ F 0 "R16" H 3220 2196 50  0000 L CNN
 F 1 "100" H 3220 2105 50  0000 L CNN
 F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 3080 2150 50  0001 C CNN
 F 3 "~" H 3150 2150 50  0001 C CNN
+F 4 "C17901" H 3150 2150 50  0001 C CNN "LCSC Part Number"
 	1    3150 2150
 	-1   0    0    1   
 $EndComp
@@ -122,6 +125,7 @@ F 0 "R15" H 3220 1796 50  0000 L CNN
 F 1 "100" H 3220 1705 50  0000 L CNN
 F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 3080 1750 50  0001 C CNN
 F 3 "~" H 3150 1750 50  0001 C CNN
+F 4 "C17901" H 3150 1750 50  0001 C CNN "LCSC Part Number"
 	1    3150 1750
 	-1   0    0    1   
 $EndComp
@@ -278,6 +282,7 @@ F 0 "U11" H 3350 2550 50  0000 C CNN
 F 1 "SP3491" H 3350 2450 50  0000 C CNN
 F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 3650 1300 50  0001 C CNN
 F 3 "https://www.maxlinear.com/ds/sp3490_sp3491.pdf" H 3700 2025 50  0001 C CNN
+F 4 "C26737" H 3650 2000 50  0001 C CNN "LCSC Part Number"
 	1    3650 2000
 	-1   0    0    1   
 $EndComp
