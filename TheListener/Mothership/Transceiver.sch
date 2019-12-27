@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 9 9
+Sheet 6 11
 Title ""
 Date ""
 Rev ""
@@ -147,25 +147,6 @@ F 3 "" H 3550 1400 50  0001 C CNN
 	1    3550 1400
 	-1   0    0    1   
 $EndComp
-$Comp
-L power:VCC #PWR02
-U 1 1 5E069EC5
-P 3300 2500
-AR Path="/5E066126/5E069EC5" Ref="#PWR02"  Part="1" 
-AR Path="/5E0B2A45/5E069EC5" Ref="#PWR010"  Part="1" 
-AR Path="/5E0C9D0C/5E069EC5" Ref="#PWR018"  Part="1" 
-AR Path="/5E0C9D12/5E069EC5" Ref="#PWR026"  Part="1" 
-AR Path="/5E0DC236/5E069EC5" Ref="#PWR034"  Part="1" 
-AR Path="/5E0DC23A/5E069EC5" Ref="#PWR042"  Part="1" 
-AR Path="/5E0DC23E/5E069EC5" Ref="#PWR050"  Part="1" 
-AR Path="/5E0DC242/5E069EC5" Ref="#PWR058"  Part="1" 
-F 0 "#PWR058" H 3300 2350 50  0001 C CNN
-F 1 "VCC" V 3318 2627 50  0000 L CNN
-F 2 "" H 3300 2500 50  0001 C CNN
-F 3 "" H 3300 2500 50  0001 C CNN
-	1    3300 2500
-	0    -1   -1   0   
-$EndComp
 Connection ~ 2500 1900
 $Comp
 L Connector:RJ45 J1
@@ -225,44 +206,6 @@ TX
 Connection ~ 2500 2000
 Wire Wire Line
 	2500 2000 2500 2100
-$Comp
-L power:VCC #PWR061
-U 1 1 5E06D9F0
-P 4700 1700
-AR Path="/5E0DC242/5E06D9F0" Ref="#PWR061"  Part="1" 
-AR Path="/5E066126/5E06D9F0" Ref="#PWR05"  Part="1" 
-AR Path="/5E0B2A45/5E06D9F0" Ref="#PWR013"  Part="1" 
-AR Path="/5E0C9D0C/5E06D9F0" Ref="#PWR021"  Part="1" 
-AR Path="/5E0C9D12/5E06D9F0" Ref="#PWR029"  Part="1" 
-AR Path="/5E0DC236/5E06D9F0" Ref="#PWR037"  Part="1" 
-AR Path="/5E0DC23A/5E06D9F0" Ref="#PWR045"  Part="1" 
-AR Path="/5E0DC23E/5E06D9F0" Ref="#PWR053"  Part="1" 
-F 0 "#PWR061" H 4700 1550 50  0001 C CNN
-F 1 "VCC" V 4717 1828 50  0000 L CNN
-F 2 "" H 4700 1700 50  0001 C CNN
-F 3 "" H 4700 1700 50  0001 C CNN
-	1    4700 1700
-	0    1    1    0   
-$EndComp
-$Comp
-L power:VCC #PWR08
-U 1 1 5E069ECB
-P 4700 2200
-AR Path="/5E066126/5E069ECB" Ref="#PWR08"  Part="1" 
-AR Path="/5E0B2A45/5E069ECB" Ref="#PWR016"  Part="1" 
-AR Path="/5E0C9D0C/5E069ECB" Ref="#PWR024"  Part="1" 
-AR Path="/5E0C9D12/5E069ECB" Ref="#PWR032"  Part="1" 
-AR Path="/5E0DC236/5E069ECB" Ref="#PWR040"  Part="1" 
-AR Path="/5E0DC23A/5E069ECB" Ref="#PWR048"  Part="1" 
-AR Path="/5E0DC23E/5E069ECB" Ref="#PWR056"  Part="1" 
-AR Path="/5E0DC242/5E069ECB" Ref="#PWR064"  Part="1" 
-F 0 "#PWR064" H 4700 2050 50  0001 C CNN
-F 1 "VCC" V 4718 2327 50  0000 L CNN
-F 2 "" H 4700 2200 50  0001 C CNN
-F 3 "" H 4700 2200 50  0001 C CNN
-	1    4700 2200
-	0    1    1    0   
-$EndComp
 $Comp
 L Switch:SW_SPDT TX_SW1
 U 1 1 5E0986EA
@@ -367,4 +310,10 @@ F 4 "C26737" H 3650 2000 50  0001 C CNN "LCSC Part Number"
 	1    3650 2000
 	-1   0    0    1   
 $EndComp
+Text HLabel 4700 1700 2    50   Input ~ 0
+VCC
+Text HLabel 4700 2200 2    50   Input ~ 0
+VCC
+Text HLabel 3300 2500 0    50   Input ~ 0
+VCC
 $EndSCHEMATC

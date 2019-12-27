@@ -18,4 +18,14 @@ K Full duplex RS-485/RS-422, 10 Mbps, ±15kV electro-static discharge (ESD) prot
 F https://www.maxlinear.com/ds/sp490e_sp491e.pdf
 $ENDCMP
 #
+$CMP VCC1
+D Power symbol creates a global label with name "VCC1"
+K power-flag
+$ENDCMP
+#
+$CMP VCC2
+D Power symbol creates a global label with name "VCC2"
+K power-flag
+$ENDCMP
+#
 #End Doc Library
