@@ -16,42 +16,38 @@ $EndDescr
 $Comp
 L power:GND #PWR01011
 U 1 1 5E172B5C
-P 7400 1250
-F 0 "#PWR01011" H 7400 1000 50  0001 C CNN
-F 1 "GND" H 7405 1077 50  0000 C CNN
-F 2 "" H 7400 1250 50  0001 C CNN
-F 3 "" H 7400 1250 50  0001 C CNN
-	1    7400 1250
+P 7150 1250
+F 0 "#PWR01011" H 7150 1000 50  0001 C CNN
+F 1 "GND" H 7155 1077 50  0000 C CNN
+F 2 "" H 7150 1250 50  0001 C CNN
+F 3 "" H 7150 1250 50  0001 C CNN
+	1    7150 1250
 	1    0    0    -1  
 $EndComp
-Text GLabel 7800 1350 0    50   Input ~ 0
+Text GLabel 7600 1350 0    50   Input ~ 0
+R_8
+Text GLabel 7600 1450 0    50   Input ~ 0
 R_1
-Text GLabel 7800 1450 0    50   Input ~ 0
-R_2
-Text GLabel 7800 1650 0    50   Input ~ 0
+Text GLabel 7600 1650 0    50   Input ~ 0
 R_3
-Text GLabel 7800 1750 0    50   Input ~ 0
+Text GLabel 7600 1750 0    50   Input ~ 0
+R_2
+Text GLabel 7600 2350 0    50   Input ~ 0
 R_4
-Text GLabel 7800 2350 0    50   Input ~ 0
-R_5
-Text GLabel 7800 2550 0    50   Input ~ 0
-R_6
-Text GLabel 7800 1550 0    50   Output ~ 0
+Text GLabel 7600 1550 0    50   Output ~ 0
 T_1
-Text GLabel 7800 1850 0    50   Output ~ 0
-T_8
-Text GLabel 7800 5250 0    50   Output ~ 0
+Text GLabel 7600 1850 0    50   Output ~ 0
 T_2
-Text GLabel 7800 2050 0    50   Output ~ 0
-T_3
-Text GLabel 7800 2150 0    50   Output ~ 0
-T_4
-Text GLabel 7800 1950 0    50   Output ~ 0
+Text GLabel 7600 5250 0    50   Output ~ 0
 T_5
-Text GLabel 10100 5350 2    50   Output ~ 0
+Text GLabel 7600 2050 0    50   Output ~ 0
 T_6
-Text GLabel 10100 5250 2    50   Output ~ 0
+Text GLabel 7600 2150 0    50   Output ~ 0
+T_4
+Text GLabel 10300 5350 2    50   Output ~ 0
 T_7
+Text GLabel 10300 5250 2    50   Output ~ 0
+T_8
 NoConn ~ 7800 3250
 NoConn ~ 7800 3350
 NoConn ~ 7800 2250
@@ -91,10 +87,10 @@ NoConn ~ 10100 4650
 NoConn ~ 10100 4550
 NoConn ~ 10100 4450
 NoConn ~ 10100 4350
-Text GLabel 7800 5550 0    50   Input ~ 0
-R_8
-Text GLabel 7800 5450 0    50   Input ~ 0
+Text GLabel 7600 5550 0    50   Input ~ 0
 R_7
+Text GLabel 7600 5450 0    50   Input ~ 0
+R_6
 $Comp
 L power:+5V #PWR01012
 U 1 1 5E8E0765
@@ -135,8 +131,6 @@ NoConn ~ 10100 3750
 NoConn ~ 10100 3850
 NoConn ~ 10100 3950
 Wire Wire Line
-	7800 1250 7400 1250
-Wire Wire Line
 	10250 4750 10100 4750
 $Comp
 L Teensy:Teensy3.5 U12
@@ -144,7 +138,7 @@ U 1 1 5E16F050
 P 8950 3400
 F 0 "U12" H 8950 6033 60  0000 C CNN
 F 1 "Teensy3.5" H 8950 5927 60  0000 C CNN
-F 2 "Teensy:Teensy35_36" H 8850 5650 60  0001 C CNN
+F 2 "TheListener:Teensy35_36_NoMiddlePins" H 8850 5650 60  0001 C CNN
 F 3 "https://www.pjrc.com/teensy/card8a_rev2.pdf" H 8950 5821 60  0000 C CNN
 F 4 "" H 8950 5723 50  0000 C CNN "Pinouts"
 	1    8950 3400
@@ -557,6 +551,188 @@ F 1 "VCC2" V 2867 5328 50  0000 L CNN
 F 2 "" H 2850 5200 50  0001 C CNN
 F 3 "" H 2850 5200 50  0001 C CNN
 	1    2850 5200
+	0    1    1    0   
+$EndComp
+Text GLabel 7600 1950 0    50   Output ~ 0
+T_3
+Text GLabel 7600 2550 0    50   Input ~ 0
+R_5
+Wire Wire Line
+	7800 1250 7150 1250
+$Comp
+L Device:R_Small_US R17
+U 1 1 5E074048
+P 7700 1350
+F 0 "R17" V 7495 1350 50  0000 C CNN
+F 1 "220" V 7586 1350 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 7700 1350 50  0001 C CNN
+F 3 "~" H 7700 1350 50  0001 C CNN
+	1    7700 1350
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small_US R18
+U 1 1 5E074A6F
+P 7700 1450
+F 0 "R18" V 7495 1450 50  0000 C CNN
+F 1 "220" V 7586 1450 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 7700 1450 50  0001 C CNN
+F 3 "~" H 7700 1450 50  0001 C CNN
+	1    7700 1450
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small_US R19
+U 1 1 5E075FF7
+P 7700 1550
+F 0 "R19" V 7495 1550 50  0000 C CNN
+F 1 "220" V 7586 1550 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 7700 1550 50  0001 C CNN
+F 3 "~" H 7700 1550 50  0001 C CNN
+	1    7700 1550
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small_US R20
+U 1 1 5E075FFD
+P 7700 1650
+F 0 "R20" V 7495 1650 50  0000 C CNN
+F 1 "220" V 7586 1650 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 7700 1650 50  0001 C CNN
+F 3 "~" H 7700 1650 50  0001 C CNN
+	1    7700 1650
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small_US R21
+U 1 1 5E07719E
+P 7700 1750
+F 0 "R21" V 7495 1750 50  0000 C CNN
+F 1 "220" V 7586 1750 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 7700 1750 50  0001 C CNN
+F 3 "~" H 7700 1750 50  0001 C CNN
+	1    7700 1750
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small_US R22
+U 1 1 5E0771A4
+P 7700 1850
+F 0 "R22" V 7495 1850 50  0000 C CNN
+F 1 "220" V 7586 1850 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 7700 1850 50  0001 C CNN
+F 3 "~" H 7700 1850 50  0001 C CNN
+	1    7700 1850
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small_US R23
+U 1 1 5E077E49
+P 7700 1950
+F 0 "R23" V 7495 1950 50  0000 C CNN
+F 1 "220" V 7586 1950 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 7700 1950 50  0001 C CNN
+F 3 "~" H 7700 1950 50  0001 C CNN
+	1    7700 1950
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small_US R24
+U 1 1 5E077E4F
+P 7700 2050
+F 0 "R24" V 7495 2050 50  0000 C CNN
+F 1 "220" V 7586 2050 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 7700 2050 50  0001 C CNN
+F 3 "~" H 7700 2050 50  0001 C CNN
+	1    7700 2050
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small_US R25
+U 1 1 5E0787A4
+P 7700 2150
+F 0 "R25" V 7495 2150 50  0000 C CNN
+F 1 "220" V 7586 2150 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 7700 2150 50  0001 C CNN
+F 3 "~" H 7700 2150 50  0001 C CNN
+	1    7700 2150
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small_US R26
+U 1 1 5E078E62
+P 7700 2350
+F 0 "R26" V 7495 2350 50  0000 C CNN
+F 1 "220" V 7586 2350 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 7700 2350 50  0001 C CNN
+F 3 "~" H 7700 2350 50  0001 C CNN
+	1    7700 2350
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small_US R27
+U 1 1 5E07926E
+P 7700 2550
+F 0 "R27" V 7495 2550 50  0000 C CNN
+F 1 "220" V 7586 2550 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 7700 2550 50  0001 C CNN
+F 3 "~" H 7700 2550 50  0001 C CNN
+	1    7700 2550
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small_US R28
+U 1 1 5E079EF2
+P 7700 5250
+F 0 "R28" V 7495 5250 50  0000 C CNN
+F 1 "220" V 7586 5250 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 7700 5250 50  0001 C CNN
+F 3 "~" H 7700 5250 50  0001 C CNN
+	1    7700 5250
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small_US R29
+U 1 1 5E07A554
+P 7700 5450
+F 0 "R29" V 7495 5450 50  0000 C CNN
+F 1 "220" V 7586 5450 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 7700 5450 50  0001 C CNN
+F 3 "~" H 7700 5450 50  0001 C CNN
+	1    7700 5450
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small_US R30
+U 1 1 5E07AAFE
+P 7700 5550
+F 0 "R30" V 7495 5550 50  0000 C CNN
+F 1 "220" V 7586 5550 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 7700 5550 50  0001 C CNN
+F 3 "~" H 7700 5550 50  0001 C CNN
+	1    7700 5550
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small_US R31
+U 1 1 5E07B5B6
+P 10200 5250
+F 0 "R31" V 9995 5250 50  0000 C CNN
+F 1 "220" V 10086 5250 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 10200 5250 50  0001 C CNN
+F 3 "~" H 10200 5250 50  0001 C CNN
+	1    10200 5250
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small_US R32
+U 1 1 5E07BAD6
+P 10200 5350
+F 0 "R32" V 9995 5350 50  0000 C CNN
+F 1 "220" V 10086 5350 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 10200 5350 50  0001 C CNN
+F 3 "~" H 10200 5350 50  0001 C CNN
+	1    10200 5350
 	0    1    1    0   
 $EndComp
 $EndSCHEMATC
