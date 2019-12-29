@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 11 11
+Sheet 10 11
 Title ""
 Date ""
 Rev ""
@@ -38,7 +38,7 @@ AR Path="/5E11AFEC/5E11B90C" Ref="C9"  Part="1"
 AR Path="/5E11E515/5E11B90C" Ref="C10"  Part="1" 
 AR Path="/5E15AFA9/5E11B90C" Ref="C9"  Part="1" 
 AR Path="/5E15C1CB/5E11B90C" Ref="C10"  Part="1" 
-F 0 "C10" H 3741 2096 50  0000 L CNN
+F 0 "C9" H 3741 2096 50  0000 L CNN
 F 1 "22uF" H 3741 2005 50  0000 L CNN
 F 2 "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B_Pad1.50x2.35mm_HandSolder" H 3650 2050 50  0001 C CNN
 F 3 "~" H 3650 2050 50  0001 C CNN
@@ -73,7 +73,7 @@ AR Path="/5E11AFEC/5E11B91B" Ref="U9"  Part="1"
 AR Path="/5E11E515/5E11B91B" Ref="U10"  Part="1" 
 AR Path="/5E15AFA9/5E11B91B" Ref="U9"  Part="1" 
 AR Path="/5E15C1CB/5E11B91B" Ref="U10"  Part="1" 
-F 0 "U10" H 3350 2192 50  0000 C CNN
+F 0 "U9" H 3350 2192 50  0000 C CNN
 F 1 "AMS1117-3.3" H 3350 2101 50  0000 C CNN
 F 2 "Package_TO_SOT_SMD:SOT-223-3_TabPin2" H 3350 2150 50  0001 C CNN
 F 3 "http://www.advanced-monolithic.com/pdf/ds1117.pdf" H 3450 1700 50  0001 C CNN
