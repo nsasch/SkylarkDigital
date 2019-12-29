@@ -144,39 +144,6 @@ F 4 "" H 8950 5723 50  0000 C CNN "Pinouts"
 	1    8950 3400
 	1    0    0    -1  
 $EndComp
-$Comp
-L Connector:Conn_01x02_Female J9
-U 1 1 5E797A49
-P 3850 6700
-F 0 "J9" H 3878 6676 50  0000 L CNN
-F 1 "Conn_01x02_Female" H 3878 6585 50  0000 L CNN
-F 2 "TerminalBlock_Phoenix:TerminalBlock_Phoenix_PT-1,5-2-3.5-H_1x02_P3.50mm_Horizontal" H 3850 6700 50  0001 C CNN
-F 3 "~" H 3850 6700 50  0001 C CNN
-	1    3850 6700
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+24V #PWR01001
-U 1 1 5E7993A4
-P 3650 6700
-F 0 "#PWR01001" H 3650 6550 50  0001 C CNN
-F 1 "+24V" H 3665 6873 50  0000 C CNN
-F 2 "" H 3650 6700 50  0001 C CNN
-F 3 "" H 3650 6700 50  0001 C CNN
-	1    3650 6700
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR01000
-U 1 1 5ECC680A
-P 3650 6800
-F 0 "#PWR01000" H 3650 6550 50  0001 C CNN
-F 1 "GND" H 3655 6627 50  0000 C CNN
-F 2 "" H 3650 6800 50  0001 C CNN
-F 3 "" H 3650 6800 50  0001 C CNN
-	1    3650 6800
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	5150 6950 5350 6950
 Connection ~ 5350 6950
@@ -750,5 +717,38 @@ F 3 "~" H 10200 5350 50  0001 C CNN
 F 4 "C22962" H 10200 5350 50  0001 C CNN "LCSC Part Number"
 	1    10200 5350
 	0    1    1    0   
+$EndComp
+$Comp
+L Connector:Conn_01x02_Female J9
+U 1 1 5E797A49
+P 3850 6700
+F 0 "J9" H 3878 6676 50  0000 L CNN
+F 1 "Conn_01x02_Female" H 3878 6585 50  0000 L CNN
+F 2 "TerminalBlock_Phoenix:TerminalBlock_Phoenix_PT-1,5-2-3.5-H_1x02_P3.50mm_Horizontal" H 3850 6700 50  0001 C CNN
+F 3 "~" H 3850 6700 50  0001 C CNN
+	1    3850 6700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR01000
+U 1 1 5ECC680A
+P 3650 6800
+F 0 "#PWR01000" H 3650 6550 50  0001 C CNN
+F 1 "GND" H 3655 6627 50  0000 C CNN
+F 2 "" H 3650 6800 50  0001 C CNN
+F 3 "" H 3650 6800 50  0001 C CNN
+	1    3650 6800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+24V #PWR01001
+U 1 1 5E7993A4
+P 3650 6700
+F 0 "#PWR01001" H 3650 6550 50  0001 C CNN
+F 1 "+24V" H 3665 6873 50  0000 C CNN
+F 2 "" H 3650 6700 50  0001 C CNN
+F 3 "" H 3650 6700 50  0001 C CNN
+	1    3650 6700
+	1    0    0    -1  
 $EndComp
 $EndSCHEMATC
