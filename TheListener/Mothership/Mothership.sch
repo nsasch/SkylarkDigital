@@ -425,8 +425,6 @@ F 3 "http://www.meanwell.com/webapp/product/search.aspx?prod=nid35" H 5750 6750 
 $EndComp
 Text GLabel 7600 1450 0    50   Input ~ 0
 R_7
-Text GLabel 7600 2350 0    50   Input ~ 0
-R_3
 Text GLabel 7600 1350 0    50   Input ~ 0
 R_8
 $Comp
@@ -623,8 +621,6 @@ F 4 "C17557" H 7700 1350 50  0001 C CNN "LCSC Part Number"
 $EndComp
 Wire Wire Line
 	7800 1250 7150 1250
-Text GLabel 7600 2550 0    50   Input ~ 0
-R_4
 Text GLabel 7600 1950 0    50   Output ~ 0
 T_3
 $Comp
@@ -752,4 +748,8 @@ F 3 "" H 7150 1250 50  0001 C CNN
 	1    7150 1250
 	1    0    0    -1  
 $EndComp
+Text GLabel 7600 2550 0    50   Input ~ 0
+R_4
+Text GLabel 7600 2350 0    50   Input ~ 0
+R_3
 $EndSCHEMATC
