@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 3 11
+Sheet 6 11
 Title ""
 Date ""
 Rev ""
@@ -35,8 +35,6 @@ F 3 "" H 2700 1900 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	2700 1900 2700 1800
-Wire Wire Line
-	3150 1600 3250 1600
 Wire Wire Line
 	3250 1600 3250 1800
 $Comp
@@ -70,7 +68,7 @@ AR Path="/5E0DC236/5E069E9F" Ref="C8"  Part="1"
 AR Path="/5E0DC23A/5E069E9F" Ref="C7"  Part="1" 
 AR Path="/5E0DC23E/5E069E9F" Ref="C6"  Part="1" 
 AR Path="/5E0DC242/5E069E9F" Ref="C5"  Part="1" 
-F 0 "C8" H 3741 2604 50  0000 L CNN
+F 0 "C5" H 3741 2604 50  0000 L CNN
 F 1 "100nF" H 3741 2695 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric" H 3650 2650 50  0001 C CNN
 F 3 "~" H 3650 2650 50  0001 C CNN
@@ -86,8 +84,6 @@ Wire Wire Line
 	3250 2000 3150 2000
 Connection ~ 3550 1400
 Wire Wire Line
-	3250 1900 3150 1900
-Wire Wire Line
 	3650 1400 3550 1400
 $Comp
 L Device:R R8
@@ -101,32 +97,12 @@ AR Path="/5E0DC236/5E069EAD" Ref="R16"  Part="1"
 AR Path="/5E0DC23A/5E069EAD" Ref="R14"  Part="1" 
 AR Path="/5E0DC23E/5E069EAD" Ref="R12"  Part="1" 
 AR Path="/5E0DC242/5E069EAD" Ref="R10"  Part="1" 
-F 0 "R16" H 3219 2104 50  0000 L CNN
+F 0 "R10" H 3219 2104 50  0000 L CNN
 F 1 "100" H 3219 2195 50  0000 L CNN
 F 2 "Resistor_SMD:R_1206_3216Metric" V 3080 2150 50  0001 C CNN
 F 3 "~" H 3150 2150 50  0001 C CNN
 F 4 "C17901" H 3150 2150 50  0001 C CNN "LCSC Part Number"
 	1    3150 2150
-	-1   0    0    1   
-$EndComp
-$Comp
-L Device:R R7
-U 1 1 5E069EB9
-P 3150 1750
-AR Path="/5E066126/5E069EB9" Ref="R7"  Part="1" 
-AR Path="/5E0B2A45/5E069EB9" Ref="R5"  Part="1" 
-AR Path="/5E0C9D0C/5E069EB9" Ref="R3"  Part="1" 
-AR Path="/5E0C9D12/5E069EB9" Ref="R1"  Part="1" 
-AR Path="/5E0DC236/5E069EB9" Ref="R15"  Part="1" 
-AR Path="/5E0DC23A/5E069EB9" Ref="R13"  Part="1" 
-AR Path="/5E0DC23E/5E069EB9" Ref="R11"  Part="1" 
-AR Path="/5E0DC242/5E069EB9" Ref="R9"  Part="1" 
-F 0 "R15" H 3219 1704 50  0000 L CNN
-F 1 "100" H 3219 1795 50  0000 L CNN
-F 2 "Resistor_SMD:R_1206_3216Metric" V 3080 1750 50  0001 C CNN
-F 3 "~" H 3150 1750 50  0001 C CNN
-F 4 "C17901" H 3150 1750 50  0001 C CNN "LCSC Part Number"
-	1    3150 1750
 	-1   0    0    1   
 $EndComp
 $Comp
@@ -161,7 +137,7 @@ AR Path="/5E0DC236/5E069EDC" Ref="J8"  Part="1"
 AR Path="/5E0DC23A/5E069EDC" Ref="J7"  Part="1" 
 AR Path="/5E0DC23E/5E069EDC" Ref="J6"  Part="1" 
 AR Path="/5E0DC242/5E069EDC" Ref="J5"  Part="1" 
-F 0 "J8" H 1771 1904 50  0000 R CNN
+F 0 "J5" H 1771 1904 50  0000 R CNN
 F 1 "RJ45" H 1771 1995 50  0000 R CNN
 F 2 "Connector_RJ:RJ45_Amphenol_54602-x08_Horizontal" V 2100 1925 50  0001 C CNN
 F 3 "~" V 2100 1925 50  0001 C CNN
@@ -178,16 +154,10 @@ Wire Wire Line
 	2900 2000 2900 2200
 Wire Wire Line
 	2900 2200 2500 2200
-Connection ~ 3150 1900
-Wire Wire Line
-	3150 1900 2900 1900
 Wire Wire Line
 	2900 1900 2900 1700
 Wire Wire Line
 	2900 1700 2500 1700
-Connection ~ 3150 1600
-Wire Wire Line
-	2500 1600 3150 1600
 Wire Wire Line
 	2500 1800 2500 1900
 Wire Wire Line
@@ -219,7 +189,7 @@ AR Path="/5E0DC236/5E0986EA" Ref="DE8"  Part="1"
 AR Path="/5E0DC23A/5E0986EA" Ref="DE7"  Part="1" 
 AR Path="/5E0DC23E/5E0986EA" Ref="DE6"  Part="1" 
 AR Path="/5E0DC242/5E0986EA" Ref="DE5"  Part="1" 
-F 0 "DE8" H 4500 2085 50  0000 C CNN
+F 0 "DE5" H 4500 2085 50  0000 C CNN
 F 1 "SW_SPDT" H 4500 1994 50  0000 C CNN
 F 2 "TheListener:SolderJumper-3_P1.3mm_Open_Pad1.0x1.5mm_EnableLabels" H 4500 1800 50  0001 C CNN
 F 3 "~" H 4500 1800 50  0001 C CNN
@@ -238,7 +208,7 @@ AR Path="/5E0DC236/5E09AE8C" Ref="RE8"  Part="1"
 AR Path="/5E0DC23A/5E09AE8C" Ref="RE7"  Part="1" 
 AR Path="/5E0DC23E/5E09AE8C" Ref="RE6"  Part="1" 
 AR Path="/5E0DC242/5E09AE8C" Ref="RE5"  Part="1" 
-F 0 "RE8" H 4500 1867 50  0000 C CNN
+F 0 "RE5" H 4500 1867 50  0000 C CNN
 F 1 "SW_SPDT" H 4500 1776 50  0000 C CNN
 F 2 "TheListener:SolderJumper-3_P1.3mm_Open_Pad1.0x1.5mm_EnableLabels" H 4500 2100 50  0001 C CNN
 F 3 "~" H 4500 2100 50  0001 C CNN
@@ -303,7 +273,7 @@ AR Path="/5E0DC236/5E069EB3" Ref="U8"  Part="1"
 AR Path="/5E0DC23A/5E069EB3" Ref="U7"  Part="1" 
 AR Path="/5E0DC23E/5E069EB3" Ref="U6"  Part="1" 
 AR Path="/5E0DC242/5E069EB3" Ref="U5"  Part="1" 
-F 0 "U8" H 3350 2550 50  0000 C CNN
+F 0 "U5" H 3350 2550 50  0000 C CNN
 F 1 "SP3491" H 3350 2450 50  0000 C CNN
 F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 3650 1300 50  0001 C CNN
 F 3 "https://www.maxlinear.com/ds/sp3490_sp3491.pdf" H 3700 2025 50  0001 C CNN
@@ -317,4 +287,34 @@ Text HLabel 4700 2200 2    50   Input ~ 0
 VCC
 Text HLabel 3300 2500 0    50   Input ~ 0
 VCC
+Wire Wire Line
+	2500 1600 3150 1600
+Wire Wire Line
+	3150 1600 3250 1600
+Connection ~ 3150 1600
+Wire Wire Line
+	3150 1900 2900 1900
+Wire Wire Line
+	3250 1900 3150 1900
+Connection ~ 3150 1900
+$Comp
+L Device:R R7
+U 1 1 5E069EB9
+P 3150 1750
+AR Path="/5E066126/5E069EB9" Ref="R7"  Part="1" 
+AR Path="/5E0B2A45/5E069EB9" Ref="R5"  Part="1" 
+AR Path="/5E0C9D0C/5E069EB9" Ref="R3"  Part="1" 
+AR Path="/5E0C9D12/5E069EB9" Ref="R1"  Part="1" 
+AR Path="/5E0DC236/5E069EB9" Ref="R15"  Part="1" 
+AR Path="/5E0DC23A/5E069EB9" Ref="R13"  Part="1" 
+AR Path="/5E0DC23E/5E069EB9" Ref="R11"  Part="1" 
+AR Path="/5E0DC242/5E069EB9" Ref="R9"  Part="1" 
+F 0 "R9" H 3219 1704 50  0000 L CNN
+F 1 "100" H 3219 1795 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric" V 3080 1750 50  0001 C CNN
+F 3 "~" H 3150 1750 50  0001 C CNN
+F 4 "C17901" H 3150 1750 50  0001 C CNN "LCSC Part Number"
+	1    3150 1750
+	-1   0    0    1   
+$EndComp
 $EndSCHEMATC

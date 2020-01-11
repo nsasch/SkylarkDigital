@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 10 11
+Sheet 11 11
 Title ""
 Date ""
 Rev ""
@@ -103,4 +103,31 @@ VCC
 Connection ~ 3650 1950
 Wire Wire Line
 	3650 1950 3750 1950
+$Comp
+L Device:CP1_Small C11
+U 1 1 5E1A15C9
+P 3050 2050
+AR Path="/5E15AFA9/5E1A15C9" Ref="C11"  Part="1" 
+AR Path="/5E15C1CB/5E1A15C9" Ref="C12"  Part="1" 
+F 0 "C12" H 3141 2096 50  0000 L CNN
+F 1 "22uF" H 3141 2005 50  0000 L CNN
+F 2 "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B" H 3050 2050 50  0001 C CNN
+F 3 "~" H 3050 2050 50  0001 C CNN
+	1    3050 2050
+	1    0    0    -1  
+$EndComp
+Connection ~ 3050 1950
+$Comp
+L power:GND #PWR012
+U 1 1 5E1A3090
+P 3050 2150
+AR Path="/5E15AFA9/5E1A3090" Ref="#PWR012"  Part="1" 
+AR Path="/5E15C1CB/5E1A3090" Ref="#PWR013"  Part="1" 
+F 0 "#PWR013" H 3050 1900 50  0001 C CNN
+F 1 "GND" H 3055 1977 50  0000 C CNN
+F 2 "" H 3050 2150 50  0001 C CNN
+F 3 "" H 3050 2150 50  0001 C CNN
+	1    3050 2150
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
