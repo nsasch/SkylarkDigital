@@ -40,7 +40,7 @@ AR Path="/5E11E515/5E11B90C" Ref="C?"  Part="1"
 AR Path="/5E15AFA9/5E11B90C" Ref="C9"  Part="1" 
 AR Path="/5E15C1CB/5E11B90C" Ref="C10"  Part="1" 
 F 0 "C10" H 3741 2096 50  0000 L CNN
-F 1 "22uF" H 3741 2005 50  0000 L CNN
+F 1 "10uF" H 3741 2005 50  0000 L CNN
 F 2 "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B" H 3650 2050 50  0001 C CNN
 F 3 "~" H 3650 2050 50  0001 C CNN
 F 4 "C110051" H 3650 2050 50  0001 C CNN "LCSC Part Number"
@@ -98,11 +98,9 @@ F 3 "" H 2950 1950 50  0001 C CNN
 	1    2950 1950
 	1    0    0    -1  
 $EndComp
-Text HLabel 3750 1950 2    50   Output ~ 0
+Text HLabel 4300 1950 2    50   Output ~ 0
 VCC
 Connection ~ 3650 1950
-Wire Wire Line
-	3650 1950 3750 1950
 $Comp
 L Device:CP1_Small C11
 U 1 1 5E1A15C9
@@ -128,6 +126,41 @@ F 1 "GND" H 3055 1977 50  0000 C CNN
 F 2 "" H 3050 2150 50  0001 C CNN
 F 3 "" H 3050 2150 50  0001 C CNN
 	1    3050 2150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP1_Small C?
+U 1 1 5E203F23
+P 4000 2050
+AR Path="/5E203F23" Ref="C?"  Part="1" 
+AR Path="/5E11AFEC/5E203F23" Ref="C?"  Part="1" 
+AR Path="/5E11E515/5E203F23" Ref="C?"  Part="1" 
+AR Path="/5E15AFA9/5E203F23" Ref="C13"  Part="1" 
+AR Path="/5E15C1CB/5E203F23" Ref="C14"  Part="1" 
+F 0 "C14" H 4091 2096 50  0000 L CNN
+F 1 "10uF" H 4091 2005 50  0000 L CNN
+F 2 "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B" H 4000 2050 50  0001 C CNN
+F 3 "~" H 4000 2050 50  0001 C CNN
+F 4 "C110051" H 4000 2050 50  0001 C CNN "LCSC Part Number"
+	1    4000 2050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3650 1950 4000 1950
+Connection ~ 4000 1950
+Wire Wire Line
+	4000 1950 4300 1950
+$Comp
+L power:GND #PWR014
+U 1 1 5E20662A
+P 4000 2150
+AR Path="/5E15C1CB/5E20662A" Ref="#PWR014"  Part="1" 
+AR Path="/5E15AFA9/5E20662A" Ref="#PWR011"  Part="1" 
+F 0 "#PWR014" H 4000 1900 50  0001 C CNN
+F 1 "GND" H 4005 1977 50  0000 C CNN
+F 2 "" H 4000 2150 50  0001 C CNN
+F 3 "" H 4000 2150 50  0001 C CNN
+	1    4000 2150
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC
