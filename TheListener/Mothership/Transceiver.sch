@@ -1,5 +1,4 @@
 EESchema Schematic File Version 4
-LIBS:Mothership-cache
 EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
@@ -288,33 +287,7 @@ VCC
 Text HLabel 3300 2500 0    50   Input ~ 0
 VCC
 Wire Wire Line
-	2500 1600 3150 1600
+	2900 1900 3250 1900
 Wire Wire Line
-	3150 1600 3250 1600
-Connection ~ 3150 1600
-Wire Wire Line
-	3150 1900 2900 1900
-Wire Wire Line
-	3250 1900 3150 1900
-Connection ~ 3150 1900
-$Comp
-L Device:R R7
-U 1 1 5E069EB9
-P 3150 1750
-AR Path="/5E066126/5E069EB9" Ref="R7"  Part="1" 
-AR Path="/5E0B2A45/5E069EB9" Ref="R5"  Part="1" 
-AR Path="/5E0C9D0C/5E069EB9" Ref="R3"  Part="1" 
-AR Path="/5E0C9D12/5E069EB9" Ref="R1"  Part="1" 
-AR Path="/5E0DC236/5E069EB9" Ref="R15"  Part="1" 
-AR Path="/5E0DC23A/5E069EB9" Ref="R13"  Part="1" 
-AR Path="/5E0DC23E/5E069EB9" Ref="R11"  Part="1" 
-AR Path="/5E0DC242/5E069EB9" Ref="R9"  Part="1" 
-F 0 "R1" H 3219 1704 50  0000 L CNN
-F 1 "100" H 3219 1795 50  0000 L CNN
-F 2 "Resistor_SMD:R_1206_3216Metric" V 3080 1750 50  0001 C CNN
-F 3 "~" H 3150 1750 50  0001 C CNN
-F 4 "C17901" H 3150 1750 50  0001 C CNN "LCSC Part Number"
-	1    3150 1750
-	-1   0    0    1   
-$EndComp
+	2500 1600 3250 1600
 $EndSCHEMATC

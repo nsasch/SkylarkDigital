@@ -1,5 +1,4 @@
 EESchema Schematic File Version 4
-LIBS:Mothership-cache
 EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
@@ -82,22 +81,6 @@ F 4 "C6186" H 3350 1950 50  0001 C CNN "LCSC Part Number"
 	1    3350 1950
 	1    0    0    -1  
 $EndComp
-$Comp
-L power:+5V #PWR?
-U 1 1 5E11B927
-P 2950 1950
-AR Path="/5E11B927" Ref="#PWR?"  Part="1" 
-AR Path="/5E11AFEC/5E11B927" Ref="#PWR?"  Part="1" 
-AR Path="/5E11E515/5E11B927" Ref="#PWR?"  Part="1" 
-AR Path="/5E15AFA9/5E11B927" Ref="#PWR058"  Part="1" 
-AR Path="/5E15C1CB/5E11B927" Ref="#PWR061"  Part="1" 
-F 0 "#PWR061" H 2950 1800 50  0001 C CNN
-F 1 "+5V" H 2965 2123 50  0000 C CNN
-F 2 "" H 2950 1950 50  0001 C CNN
-F 3 "" H 2950 1950 50  0001 C CNN
-	1    2950 1950
-	1    0    0    -1  
-$EndComp
 Text HLabel 4300 1950 2    50   Output ~ 0
 VCC
 Connection ~ 3650 1950
@@ -163,4 +146,6 @@ F 3 "" H 4000 2150 50  0001 C CNN
 	1    4000 2150
 	1    0    0    -1  
 $EndComp
+Text HLabel 2950 1950 0    50   Input ~ 0
+VIN
 $EndSCHEMATC

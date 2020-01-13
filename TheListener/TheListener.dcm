@@ -1,5 +1,15 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP 5VDC_1
+D Power symbol creates a global label with name "5VDC_1"
+K power-flag
+$ENDCMP
+#
+$CMP 5VDC_2
+D Power symbol creates a global label with name "5VDC_2"
+K power-flag
+$ENDCMP
+#
 $CMP NID35-5
 D 3.5A/17.5W Step Down Converter Module, fixed 5V Output Voltage, 200kHz, 10.5-53V Input Voltage
 K Step-Down Converter Module DC/DC
