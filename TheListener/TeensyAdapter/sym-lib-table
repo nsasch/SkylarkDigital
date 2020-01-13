@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name TheListener)(type Legacy)(uri "/Users/nsasch/Local/Skylark Collective/SkylarkDigital/TheListener/TheListener.lib")(options "")(descr ""))
+  (lib (name Teensy)(type Legacy)(uri "/Users/nsasch/Local/Skylark Collective/SkylarkDigital/TheListener/Teensy.lib")(options "")(descr ""))
+)
