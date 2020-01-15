@@ -210,7 +210,6 @@ NoConn ~ 6750 5600
 NoConn ~ 6750 5800
 NoConn ~ 6750 2900
 NoConn ~ 6750 2700
-NoConn ~ 6750 1700
 NoConn ~ 9050 5300
 NoConn ~ 9050 5400
 NoConn ~ 9050 5500
@@ -449,5 +448,16 @@ F 2 "Connector_PinSocket_2.54mm:PinSocket_2x05_P2.54mm_Vertical" H 3350 4200 50 
 F 3 "~" H 3350 4200 50  0001 C CNN
 	1    3350 4200
 	-1   0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E296641
+P 6750 1700
+F 0 "#PWR?" H 6750 1450 50  0001 C CNN
+F 1 "GND" H 6755 1527 50  0000 C CNN
+F 2 "" H 6750 1700 50  0001 C CNN
+F 3 "" H 6750 1700 50  0001 C CNN
+	1    6750 1700
+	-1   0    0    1   
 $EndComp
 $EndSCHEMATC
