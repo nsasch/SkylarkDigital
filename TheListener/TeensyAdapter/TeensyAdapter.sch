@@ -1,5 +1,4 @@
 EESchema Schematic File Version 4
-LIBS:TeensyAdapter-cache
 EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
@@ -28,24 +27,13 @@ $EndComp
 $Comp
 L power:GND #PWR02
 U 1 1 5E1CD549
-P 3100 3000
-F 0 "#PWR02" H 3100 2750 50  0001 C CNN
-F 1 "GND" V 3105 2872 50  0000 R CNN
-F 2 "" H 3100 3000 50  0001 C CNN
-F 3 "" H 3100 3000 50  0001 C CNN
-	1    3100 3000
-	0    -1   -1   0   
-$EndComp
-$Comp
-L power:GND #PWR03
-U 1 1 5E1CE2D6
-P 3750 3000
-F 0 "#PWR03" H 3750 2750 50  0001 C CNN
-F 1 "GND" V 3755 2872 50  0000 R CNN
-F 2 "" H 3750 3000 50  0001 C CNN
-F 3 "" H 3750 3000 50  0001 C CNN
-	1    3750 3000
-	0    -1   -1   0   
+P 2850 4200
+F 0 "#PWR02" H 2850 3950 50  0001 C CNN
+F 1 "GND" V 2855 4072 50  0000 R CNN
+F 2 "" H 2850 4200 50  0001 C CNN
+F 3 "" H 2850 4200 50  0001 C CNN
+	1    2850 4200
+	1    0    0    -1  
 $EndComp
 Text GLabel 2600 4000 2    50   Output ~ 0
 R_3
@@ -59,50 +47,50 @@ Text GLabel 2600 4400 2    50   Input ~ 0
 T_6
 Text GLabel 2100 4400 0    50   Output ~ 0
 R_5
-Text GLabel 3050 4400 0    50   Output ~ 0
+Text GLabel 3100 4400 0    50   Output ~ 0
 R_7
-Text GLabel 3550 4000 2    50   Output ~ 0
+Text GLabel 3600 4000 2    50   Output ~ 0
 R_1
-Text GLabel 3550 4100 2    50   Input ~ 0
+Text GLabel 3600 4100 2    50   Input ~ 0
 T_1
-Text GLabel 3550 4400 2    50   Input ~ 0
+Text GLabel 3600 4400 2    50   Input ~ 0
 T_8
-Text GLabel 3050 4000 0    50   Input ~ 0
+Text GLabel 3100 4000 0    50   Input ~ 0
 T_2
-Text GLabel 3050 4100 0    50   Output ~ 0
+Text GLabel 3100 4100 0    50   Output ~ 0
 R_2
-Text GLabel 3050 4300 0    50   Input ~ 0
+Text GLabel 3100 4300 0    50   Input ~ 0
 T_7
-Text GLabel 3550 4300 2    50   Output ~ 0
+Text GLabel 3600 4300 2    50   Output ~ 0
 R_8
 Text GLabel 6550 1800 0    50   Input ~ 0
-R_8
-Text GLabel 6550 1900 0    50   Input ~ 0
-R_7
-Text GLabel 6550 2000 0    50   Output ~ 0
-T_1
-Text GLabel 6550 2100 0    50   Input ~ 0
-R_1
-Text GLabel 6550 2200 0    50   Input ~ 0
-R_2
-Text GLabel 6550 2300 0    50   Output ~ 0
-T_2
-Text GLabel 6550 2400 0    50   Output ~ 0
-T_3
-Text GLabel 6550 2500 0    50   Output ~ 0
-T_6
-Text GLabel 6550 2600 0    50   Output ~ 0
-T_4
-Text GLabel 6550 2800 0    50   Input ~ 0
-R_3
-Text GLabel 6550 3000 0    50   Input ~ 0
 R_4
-Text GLabel 6550 6000 0    50   Input ~ 0
-R_6
-Text GLabel 6550 5900 0    50   Input ~ 0
+Text GLabel 6550 1900 0    50   Input ~ 0
 R_5
-Text GLabel 6550 5700 0    50   Output ~ 0
+Text GLabel 6550 2000 0    50   Output ~ 0
 T_5
+Text GLabel 6550 2100 0    50   Input ~ 0
+R_2
+Text GLabel 6550 2200 0    50   Input ~ 0
+R_6
+Text GLabel 6550 2300 0    50   Output ~ 0
+T_6
+Text GLabel 6550 2400 0    50   Output ~ 0
+T_2
+Text GLabel 6550 2500 0    50   Output ~ 0
+T_7
+Text GLabel 6550 2600 0    50   Output ~ 0
+T_8
+Text GLabel 6550 2800 0    50   Input ~ 0
+R_7
+Text GLabel 6550 3000 0    50   Input ~ 0
+R_8
+Text GLabel 6550 6000 0    50   Input ~ 0
+R_3
+Text GLabel 6550 5900 0    50   Input ~ 0
+R_1
+Text GLabel 6550 5700 0    50   Output ~ 0
+T_1
 $Comp
 L power:+5V #PWR05
 U 1 1 5E1D3F2D
@@ -117,23 +105,23 @@ $EndComp
 $Comp
 L power:+5V #PWR01
 U 1 1 5E1D47F3
-P 3100 3100
-F 0 "#PWR01" H 3100 2950 50  0001 C CNN
-F 1 "+5V" V 3115 3228 50  0000 L CNN
-F 2 "" H 3100 3100 50  0001 C CNN
-F 3 "" H 3100 3100 50  0001 C CNN
-	1    3100 3100
-	0    1    1    0   
+P 2100 4200
+F 0 "#PWR01" H 2100 4050 50  0001 C CNN
+F 1 "+5V" V 2115 4328 50  0000 L CNN
+F 2 "" H 2100 4200 50  0001 C CNN
+F 3 "" H 2100 4200 50  0001 C CNN
+	1    2100 4200
+	0    -1   -1   0   
 $EndComp
 $Comp
 L power:+5V #PWR04
 U 1 1 5E1D4A51
-P 3750 3100
-F 0 "#PWR04" H 3750 2950 50  0001 C CNN
-F 1 "+5V" V 3765 3228 50  0000 L CNN
-F 2 "" H 3750 3100 50  0001 C CNN
-F 3 "" H 3750 3100 50  0001 C CNN
-	1    3750 3100
+P 3600 4200
+F 0 "#PWR04" H 3600 4050 50  0001 C CNN
+F 1 "+5V" V 3615 4328 50  0000 L CNN
+F 2 "" H 3600 4200 50  0001 C CNN
+F 3 "" H 3600 4200 50  0001 C CNN
+	1    3600 4200
 	0    1    1    0   
 $EndComp
 $Comp
@@ -393,71 +381,38 @@ F 3 "~" H 9150 5800 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 Text GLabel 9250 5700 2    50   Output ~ 0
-T_8
+T_4
 Text GLabel 9250 5800 2    50   Output ~ 0
-T_7
+T_3
 Text GLabel 2100 4300 0    50   Input ~ 0
 T_5
 Text GLabel 2100 4000 0    50   Input ~ 0
 T_4
-NoConn ~ 3050 4200
-NoConn ~ 3550 4200
-NoConn ~ 2100 4200
-NoConn ~ 2600 4200
-$Comp
-L Connector:Conn_01x04_Male J3
-U 1 1 5E1DA780
-P 2900 3000
-F 0 "J3" H 3008 3281 50  0000 C CNN
-F 1 "Conn_01x04_Male" H 3008 3190 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 2900 3000 50  0001 C CNN
-F 3 "~" H 2900 3000 50  0001 C CNN
-	1    2900 3000
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3100 2900 3100 3000
-Connection ~ 3100 3000
-Wire Wire Line
-	3100 3100 3100 3200
-Connection ~ 3100 3100
-$Comp
-L Connector:Conn_01x04_Male J4
-U 1 1 5E1DDA98
-P 3550 3000
-F 0 "J4" H 3658 3281 50  0000 C CNN
-F 1 "Conn_01x04_Male" H 3658 3190 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 3550 3000 50  0001 C CNN
-F 3 "~" H 3550 3000 50  0001 C CNN
-	1    3550 3000
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3750 3100 3750 3200
-Connection ~ 3750 3100
-Wire Wire Line
-	3750 3000 3750 2900
-Connection ~ 3750 3000
 $Comp
 L Connector_Generic:Conn_02x05_Odd_Even J2
 U 1 1 5E1C99D9
-P 3350 4200
-F 0 "J2" H 3400 4617 50  0000 C CNN
-F 1 "Conn_02x05_Odd_Even" H 3400 4526 50  0000 C CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_2x05_P2.54mm_Vertical" H 3350 4200 50  0001 C CNN
-F 3 "~" H 3350 4200 50  0001 C CNN
-	1    3350 4200
+P 3400 4200
+F 0 "J2" H 3450 4617 50  0000 C CNN
+F 1 "Conn_02x05_Odd_Even" H 3450 4526 50  0000 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_2x05_P2.54mm_Vertical" H 3400 4200 50  0001 C CNN
+F 3 "~" H 3400 4200 50  0001 C CNN
+	1    3400 4200
 	-1   0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0101
 U 1 1 5E296641
 P 6750 1700
-F 0 "#PWR?" H 6750 1450 50  0001 C CNN
+F 0 "#PWR0101" H 6750 1450 50  0001 C CNN
 F 1 "GND" H 6755 1527 50  0000 C CNN
 F 2 "" H 6750 1700 50  0001 C CNN
 F 3 "" H 6750 1700 50  0001 C CNN
 	1    6750 1700
 	-1   0    0    1   
 $EndComp
+Wire Wire Line
+	2600 4200 2850 4200
+Connection ~ 2850 4200
+Wire Wire Line
+	2850 4200 3100 4200
 $EndSCHEMATC
