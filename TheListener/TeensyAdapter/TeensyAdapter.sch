@@ -14,17 +14,6 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Connector_Generic:Conn_02x05_Odd_Even J1
-U 1 1 5E1C8AC8
-P 2300 4200
-F 0 "J1" H 2350 3775 50  0000 C CNN
-F 1 "Conn_02x05_Odd_Even" H 2350 3866 50  0000 C CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_2x05_P2.54mm_Vertical" H 2300 4200 50  0001 C CNN
-F 3 "~" H 2300 4200 50  0001 C CNN
-	1    2300 4200
-	1    0    0    1   
-$EndComp
-$Comp
 L power:GND #PWR02
 U 1 1 5E1CD549
 P 2850 4200
@@ -100,28 +89,6 @@ F 1 "+5V" V 9065 5328 50  0000 L CNN
 F 2 "" H 9050 5200 50  0001 C CNN
 F 3 "" H 9050 5200 50  0001 C CNN
 	1    9050 5200
-	0    1    1    0   
-$EndComp
-$Comp
-L power:+5V #PWR01
-U 1 1 5E1D47F3
-P 2100 4200
-F 0 "#PWR01" H 2100 4050 50  0001 C CNN
-F 1 "+5V" V 2115 4328 50  0000 L CNN
-F 2 "" H 2100 4200 50  0001 C CNN
-F 3 "" H 2100 4200 50  0001 C CNN
-	1    2100 4200
-	0    -1   -1   0   
-$EndComp
-$Comp
-L power:+5V #PWR04
-U 1 1 5E1D4A51
-P 3600 4200
-F 0 "#PWR04" H 3600 4050 50  0001 C CNN
-F 1 "+5V" V 3615 4328 50  0000 L CNN
-F 2 "" H 3600 4200 50  0001 C CNN
-F 3 "" H 3600 4200 50  0001 C CNN
-	1    3600 4200
 	0    1    1    0   
 $EndComp
 $Comp
@@ -415,4 +382,21 @@ Wire Wire Line
 Connection ~ 2850 4200
 Wire Wire Line
 	2850 4200 3100 4200
+$Comp
+L Connector_Generic:Conn_02x05_Odd_Even J1
+U 1 1 5E1C8AC8
+P 2300 4200
+F 0 "J1" H 2350 3775 50  0000 C CNN
+F 1 "Conn_02x05_Odd_Even" H 2350 3866 50  0000 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_2x05_P2.54mm_Vertical" H 2300 4200 50  0001 C CNN
+F 3 "~" H 2300 4200 50  0001 C CNN
+	1    2300 4200
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	2100 4200 2600 4200
+Connection ~ 2600 4200
+Wire Wire Line
+	3100 4200 3600 4200
+Connection ~ 3100 4200
 $EndSCHEMATC
