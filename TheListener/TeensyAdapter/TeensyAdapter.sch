@@ -361,7 +361,7 @@ U 1 1 5E1C99D9
 P 3400 4200
 F 0 "J2" H 3450 4617 50  0000 C CNN
 F 1 "Conn_02x05_Odd_Even" H 3450 4526 50  0000 C CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_2x05_P2.54mm_Vertical" H 3400 4200 50  0001 C CNN
+F 2 "TheListener:PinSocket_2x05_P2.54mm_Vertical_MinCrtYd" H 3400 4200 50  0001 C CNN
 F 3 "~" H 3400 4200 50  0001 C CNN
 	1    3400 4200
 	-1   0    0    -1  
@@ -388,7 +388,7 @@ U 1 1 5E1C8AC8
 P 2300 4200
 F 0 "J1" H 2350 3775 50  0000 C CNN
 F 1 "Conn_02x05_Odd_Even" H 2350 3866 50  0000 C CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_2x05_P2.54mm_Vertical" H 2300 4200 50  0001 C CNN
+F 2 "TheListener:PinSocket_2x05_P2.54mm_Vertical_MinCrtYd" H 2300 4200 50  0001 C CNN
 F 3 "~" H 2300 4200 50  0001 C CNN
 	1    2300 4200
 	1    0    0    1   
@@ -399,4 +399,65 @@ Connection ~ 2600 4200
 Wire Wire Line
 	3100 4200 3600 4200
 Connection ~ 3100 4200
+$Comp
+L Connector_Generic:Conn_02x02_Odd_Even J3
+U 1 1 5E241566
+P 1350 4850
+F 0 "J3" H 1400 5067 50  0000 C CNN
+F 1 "Conn_02x02_Odd_Even" H 1400 4976 50  0000 C CNN
+F 2 "TheListener:PinSocket_2x02_P2.54mm_Vertical_MinCrtYd" H 1350 4850 50  0001 C CNN
+F 3 "~" H 1350 4850 50  0001 C CNN
+	1    1350 4850
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR03
+U 1 1 5E242B12
+P 1150 4950
+F 0 "#PWR03" H 1150 4700 50  0001 C CNN
+F 1 "GND" V 1155 4822 50  0000 R CNN
+F 2 "" H 1150 4950 50  0001 C CNN
+F 3 "" H 1150 4950 50  0001 C CNN
+	1    1150 4950
+	0    1    1    0   
+$EndComp
+$Comp
+L power:PWR_FLAG #FLG02
+U 1 1 5E242F11
+P 1150 4950
+F 0 "#FLG02" H 1150 5025 50  0001 C CNN
+F 1 "PWR_FLAG" H 1150 5123 50  0000 C CNN
+F 2 "" H 1150 4950 50  0001 C CNN
+F 3 "~" H 1150 4950 50  0001 C CNN
+	1    1150 4950
+	-1   0    0    1   
+$EndComp
+Connection ~ 1150 4950
+$Comp
+L power:PWR_FLAG #FLG01
+U 1 1 5E24326E
+P 1150 4850
+F 0 "#FLG01" H 1150 4925 50  0001 C CNN
+F 1 "PWR_FLAG" H 1150 5023 50  0000 C CNN
+F 2 "" H 1150 4850 50  0001 C CNN
+F 3 "~" H 1150 4850 50  0001 C CNN
+	1    1150 4850
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR0102
+U 1 1 5E246037
+P 1150 4850
+F 0 "#PWR0102" H 1150 4700 50  0001 C CNN
+F 1 "+5V" V 1165 4978 50  0000 L CNN
+F 2 "" H 1150 4850 50  0001 C CNN
+F 3 "" H 1150 4850 50  0001 C CNN
+	1    1150 4850
+	0    -1   -1   0   
+$EndComp
+Connection ~ 1150 4850
+Wire Wire Line
+	1150 4950 1650 4950
+Wire Wire Line
+	1650 4850 1150 4850
 $EndSCHEMATC
