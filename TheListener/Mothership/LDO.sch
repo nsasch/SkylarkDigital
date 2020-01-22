@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 10 11
+Sheet 4 6
 Title ""
 Date ""
 Rev ""
@@ -36,9 +36,9 @@ P 3650 2050
 AR Path="/5E11B90C" Ref="C?"  Part="1" 
 AR Path="/5E11AFEC/5E11B90C" Ref="C?"  Part="1" 
 AR Path="/5E11E515/5E11B90C" Ref="C?"  Part="1" 
-AR Path="/5E15AFA9/5E11B90C" Ref="C9"  Part="1" 
-AR Path="/5E15C1CB/5E11B90C" Ref="C10"  Part="1" 
-F 0 "C10" H 3741 2096 50  0000 L CNN
+AR Path="/5E15AFA9/5E11B90C" Ref="C10"  Part="1" 
+AR Path="/5E15C1CB/5E11B90C" Ref="C13"  Part="1" 
+F 0 "C13" H 3741 2096 50  0000 L CNN
 F 1 "10uF" H 3741 2005 50  0000 L CNN
 F 2 "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B" H 3650 2050 50  0001 C CNN
 F 3 "~" H 3650 2050 50  0001 C CNN
@@ -85,10 +85,10 @@ Text HLabel 4300 1950 2    50   Output ~ 0
 VCC
 Connection ~ 3650 1950
 $Comp
-L Device:CP1_Small C11
+L Device:CP1_Small C9
 U 1 1 5E1A15C9
 P 3050 2050
-AR Path="/5E15AFA9/5E1A15C9" Ref="C11"  Part="1" 
+AR Path="/5E15AFA9/5E1A15C9" Ref="C9"  Part="1" 
 AR Path="/5E15C1CB/5E1A15C9" Ref="C12"  Part="1" 
 F 0 "C12" H 3141 2096 50  0000 L CNN
 F 1 "22uF" H 3141 2005 50  0000 L CNN
@@ -118,7 +118,7 @@ P 4000 2050
 AR Path="/5E203F23" Ref="C?"  Part="1" 
 AR Path="/5E11AFEC/5E203F23" Ref="C?"  Part="1" 
 AR Path="/5E11E515/5E203F23" Ref="C?"  Part="1" 
-AR Path="/5E15AFA9/5E203F23" Ref="C13"  Part="1" 
+AR Path="/5E15AFA9/5E203F23" Ref="C11"  Part="1" 
 AR Path="/5E15C1CB/5E203F23" Ref="C14"  Part="1" 
 F 0 "C14" H 4091 2096 50  0000 L CNN
 F 1 "10uF" H 4091 2005 50  0000 L CNN

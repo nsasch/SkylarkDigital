@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 11
+Sheet 1 6
 Title ""
 Date ""
 Rev ""
@@ -13,83 +13,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Comp
-L TheListener:VCC2 #PWR08
-U 1 1 5E1366A9
-P 1450 2700
-F 0 "#PWR08" H 1450 2550 50  0001 C CNN
-F 1 "VCC2" V 1467 2828 50  0000 L CNN
-F 2 "" H 1450 2700 50  0001 C CNN
-F 3 "" H 1450 2700 50  0001 C CNN
-	1    1450 2700
-	0    1    1    0   
-$EndComp
-$Comp
-L TheListener:VCC2 #PWR07
-U 1 1 5E135E08
-P 1450 3150
-F 0 "#PWR07" H 1450 3000 50  0001 C CNN
-F 1 "VCC2" V 1467 3278 50  0000 L CNN
-F 2 "" H 1450 3150 50  0001 C CNN
-F 3 "" H 1450 3150 50  0001 C CNN
-	1    1450 3150
-	0    1    1    0   
-$EndComp
-$Comp
-L TheListener:VCC2 #PWR06
-U 1 1 5E135B44
-P 1450 2200
-F 0 "#PWR06" H 1450 2050 50  0001 C CNN
-F 1 "VCC2" V 1467 2328 50  0000 L CNN
-F 2 "" H 1450 2200 50  0001 C CNN
-F 3 "" H 1450 2200 50  0001 C CNN
-	1    1450 2200
-	0    1    1    0   
-$EndComp
-$Comp
-L TheListener:VCC2 #PWR05
-U 1 1 5E133CD0
-P 1450 1750
-F 0 "#PWR05" H 1450 1600 50  0001 C CNN
-F 1 "VCC2" V 1467 1878 50  0000 L CNN
-F 2 "" H 1450 1750 50  0001 C CNN
-F 3 "" H 1450 1750 50  0001 C CNN
-	1    1450 1750
-	0    1    1    0   
-$EndComp
-$Comp
-L TheListener:VCC1 #PWR03
-U 1 1 5E12F4FD
-P 1450 3600
-F 0 "#PWR03" H 1450 3450 50  0001 C CNN
-F 1 "VCC1" H 1467 3773 50  0000 C CNN
-F 2 "" H 1450 3600 50  0001 C CNN
-F 3 "" H 1450 3600 50  0001 C CNN
-	1    1450 3600
-	0    1    1    0   
-$EndComp
-$Comp
-L TheListener:VCC1 #PWR02
-U 1 1 5E12F28E
-P 1450 1300
-F 0 "#PWR02" H 1450 1150 50  0001 C CNN
-F 1 "VCC1" H 1467 1473 50  0000 C CNN
-F 2 "" H 1450 1300 50  0001 C CNN
-F 3 "" H 1450 1300 50  0001 C CNN
-	1    1450 1300
-	0    1    1    0   
-$EndComp
-$Comp
-L TheListener:VCC1 #PWR01
-U 1 1 5E12E589
-P 1450 850
-F 0 "#PWR01" H 1450 700 50  0001 C CNN
-F 1 "VCC1" H 1467 1023 50  0000 C CNN
-F 2 "" H 1450 850 50  0001 C CNN
-F 3 "" H 1450 850 50  0001 C CNN
-	1    1450 850 
-	0    1    1    0   
-$EndComp
 $Sheet
 S 950  2150 500  250 
 U 5E0C9D12
@@ -108,15 +31,100 @@ F2 "RX" O L 950 1750 50
 F3 "TX" O L 950 1900 50 
 F4 "VCC" I R 1450 1750 50 
 $EndSheet
+Text GLabel 950  850  0    50   Input ~ 0
+T_3
+Text GLabel 950  1000 0    50   Input ~ 0
+R_3
+Text GLabel 950  1300 0    50   Input ~ 0
+T_4
+Text GLabel 950  1450 0    50   Input ~ 0
+R_4
 $Sheet
-S 950  1250 500  250 
-U 5E0B2A45
-F0 "Transceiver2" 50
-F1 "Transceiver.sch" 50
-F2 "RX" O L 950 1300 50 
-F3 "TX" O L 950 1450 50 
-F4 "VCC" I R 1450 1300 50 
+S 2150 5300 500  150 
+U 5E15C1CB
+F0 "LDO2" 50
+F1 "LDO.sch" 50
+F2 "VCC" O R 2650 5350 50 
+F3 "VIN" I L 2150 5350 50 
 $EndSheet
+Text GLabel 4250 6650 2    50   Input ~ 0
+R_2
+Text GLabel 3750 6750 0    50   Input ~ 0
+R_3
+Text GLabel 3750 6850 0    50   Input ~ 0
+R_4
+Text GLabel 4250 6550 2    50   Input ~ 0
+R_1
+$Comp
+L power:GND #PWR061
+U 1 1 5E233881
+P 4250 6950
+F 0 "#PWR061" H 4250 6700 50  0001 C CNN
+F 1 "GND" V 4255 6822 50  0000 R CNN
+F 2 "" H 4250 6950 50  0001 C CNN
+F 3 "" H 4250 6950 50  0001 C CNN
+	1    4250 6950
+	0    -1   1    0   
+$EndComp
+$Comp
+L Connector_Generic:Conn_02x06_Odd_Even J9
+U 1 1 5E27CDF3
+P 3950 6650
+F 0 "J9" H 4000 7067 50  0000 C CNN
+F 1 "Conn_02x06_Odd_Even" H 4000 6976 50  0000 C CNN
+F 2 "Connector_IDC:IDC-Header_2x06_P2.54mm_Vertical" H 3950 6650 50  0001 C CNN
+F 3 "~" H 3950 6650 50  0001 C CNN
+	1    3950 6650
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR017
+U 1 1 5E2819C9
+P 4250 6450
+F 0 "#PWR017" H 4250 6300 50  0001 C CNN
+F 1 "+5V" V 4265 6578 50  0000 L CNN
+F 2 "" H 4250 6450 50  0001 C CNN
+F 3 "" H 4250 6450 50  0001 C CNN
+	1    4250 6450
+	0    1    -1   0   
+$EndComp
+$Comp
+L power:PWR_FLAG #FLG02
+U 1 1 5E283130
+P 4250 6450
+F 0 "#FLG02" H 4250 6525 50  0001 C CNN
+F 1 "PWR_FLAG" H 4250 6623 50  0000 C CNN
+F 2 "" H 4250 6450 50  0001 C CNN
+F 3 "~" H 4250 6450 50  0001 C CNN
+	1    4250 6450
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:PWR_FLAG #FLG01
+U 1 1 5E2834E0
+P 3750 6450
+F 0 "#FLG01" H 3750 6525 50  0001 C CNN
+F 1 "PWR_FLAG" H 3750 6623 50  0000 C CNN
+F 2 "" H 3750 6450 50  0001 C CNN
+F 3 "~" H 3750 6450 50  0001 C CNN
+	1    3750 6450
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR015
+U 1 1 5E285F70
+P 2150 5350
+F 0 "#PWR015" H 2150 5200 50  0001 C CNN
+F 1 "+5V" V 2165 5478 50  0000 L CNN
+F 2 "" H 2150 5350 50  0001 C CNN
+F 3 "" H 2150 5350 50  0001 C CNN
+	1    2150 5350
+	0    -1   -1   0   
+$EndComp
+Text GLabel 950  1900 0    50   Input ~ 0
+R_1
+Text GLabel 950  1750 0    50   Input ~ 0
+T_1
 $Sheet
 S 950  800  500  250 
 U 5E066126
@@ -126,404 +134,104 @@ F2 "RX" O L 950 850 50
 F3 "TX" O L 950 1000 50 
 F4 "VCC" I R 1450 850 50 
 $EndSheet
-Text GLabel 950  2850 0    50   Input ~ 0
-T_5
-Text GLabel 950  2700 0    50   Input ~ 0
-R_5
-Text GLabel 950  3300 0    50   Input ~ 0
-T_6
-Text GLabel 950  3150 0    50   Input ~ 0
-R_6
-Text GLabel 950  3750 0    50   Input ~ 0
-T_7
-Text GLabel 950  3600 0    50   Input ~ 0
-R_7
-Text GLabel 950  4200 0    50   Input ~ 0
-T_8
-Text GLabel 950  4050 0    50   Input ~ 0
-R_8
-$Sheet
-S 950  4000 500  250 
-U 5E0DC242
-F0 "Transceiver8" 50
-F1 "Transceiver.sch" 50
-F2 "RX" O L 950 4050 50 
-F3 "TX" O L 950 4200 50 
-F4 "VCC" I R 1450 4050 50 
-$EndSheet
-$Sheet
-S 950  3550 500  250 
-U 5E0DC23E
-F0 "Transceiver7" 50
-F1 "Transceiver.sch" 50
-F2 "RX" O L 950 3600 50 
-F3 "TX" O L 950 3750 50 
-F4 "VCC" I R 1450 3600 50 
-$EndSheet
-$Sheet
-S 950  3100 500  250 
-U 5E0DC23A
-F0 "Transceiver6" 50
-F1 "Transceiver.sch" 50
-F2 "RX" O L 950 3150 50 
-F3 "TX" O L 950 3300 50 
-F4 "VCC" I R 1450 3150 50 
-$EndSheet
-$Sheet
-S 950  2650 500  250 
-U 5E0DC236
-F0 "Transceiver5" 50
-F1 "Transceiver.sch" 50
-F2 "RX" O L 950 2700 50 
-F3 "TX" O L 950 2850 50 
-F4 "VCC" I R 1450 2700 50 
-$EndSheet
-Text GLabel 950  1000 0    50   Input ~ 0
-T_1
-Text GLabel 950  850  0    50   Input ~ 0
-R_1
-Text GLabel 950  1450 0    50   Input ~ 0
-T_2
-Text GLabel 950  1300 0    50   Input ~ 0
-R_2
-Text GLabel 950  1900 0    50   Input ~ 0
-T_3
-Text GLabel 950  1750 0    50   Input ~ 0
-R_3
 Text GLabel 950  2350 0    50   Input ~ 0
-T_4
-Text GLabel 950  2200 0    50   Input ~ 0
-R_4
-$Sheet
-S 2350 4700 500  150 
-U 5E15AFA9
-F0 "LDO1" 50
-F1 "LDO.sch" 50
-F2 "VCC" O R 2850 4750 50 
-F3 "VIN" I L 2350 4750 50 
-$EndSheet
-$Comp
-L TheListener:VCC1 #PWR09
-U 1 1 5E15BEF3
-P 2850 4750
-F 0 "#PWR09" H 2850 4600 50  0001 C CNN
-F 1 "VCC1" V 2867 4878 50  0000 L CNN
-F 2 "" H 2850 4750 50  0001 C CNN
-F 3 "" H 2850 4750 50  0001 C CNN
-	1    2850 4750
-	0    1    1    0   
-$EndComp
-$Sheet
-S 2350 5150 500  150 
-U 5E15C1CB
-F0 "LDO2" 50
-F1 "LDO.sch" 50
-F2 "VCC" O R 2850 5200 50 
-F3 "VIN" I L 2350 5200 50 
-$EndSheet
-$Comp
-L TheListener:VCC1 #PWR04
-U 1 1 5E12F77A
-P 1450 4050
-F 0 "#PWR04" H 1450 3900 50  0001 C CNN
-F 1 "VCC1" H 1467 4200 50  0000 C CNN
-F 2 "" H 1450 4050 50  0001 C CNN
-F 3 "" H 1450 4050 50  0001 C CNN
-	1    1450 4050
-	0    1    1    0   
-$EndComp
-Text GLabel 6450 4700 0    50   Input ~ 0
-T_7
-Text GLabel 6950 4700 2    50   Input ~ 0
-R_8
-Text GLabel 6450 4400 0    50   Input ~ 0
-T_2
-Text GLabel 6450 4500 0    50   Input ~ 0
 R_2
+Text GLabel 950  2200 0    50   Input ~ 0
+T_2
+$Sheet
+S 950  1250 500  250 
+U 5E0B2A45
+F0 "Transceiver2" 50
+F1 "Transceiver.sch" 50
+F2 "RX" O L 950 1300 50 
+F3 "TX" O L 950 1450 50 
+F4 "VCC" I R 1450 1300 50 
+$EndSheet
 $Comp
-L Connector_Generic:Conn_02x05_Odd_Even J10
-U 1 1 5E1AC616
-P 4900 4600
-F 0 "J10" H 4950 5017 50  0000 C CNN
-F 1 "Conn_02x05_Odd_Even" H 4950 4926 50  0000 C CNN
-F 2 "TheListener:PinSocket_2x05_P2.54mm_Vertical_MinCrtYd" H 4900 4600 50  0001 C CNN
-F 3 "~" H 4900 4600 50  0001 C CNN
-	1    4900 4600
-	1    0    0    1   
-$EndComp
-Text GLabel 5200 4400 2    50   Input ~ 0
-R_3
-Text GLabel 5200 4500 2    50   Input ~ 0
-T_3
-Text GLabel 4700 4500 0    50   Input ~ 0
-R_4
-Text GLabel 4700 4400 0    50   Input ~ 0
-T_4
-Text GLabel 4700 4700 0    50   Input ~ 0
-T_5
-Text GLabel 4700 4800 0    50   Input ~ 0
-R_5
-Text GLabel 5200 4800 2    50   Input ~ 0
-T_6
-Text GLabel 5200 4700 2    50   Input ~ 0
-R_6
-Text GLabel 6450 4800 0    50   Input ~ 0
-R_7
-Text GLabel 6950 4800 2    50   Input ~ 0
-T_8
-Text GLabel 6950 4500 2    50   Input ~ 0
-T_1
-Text GLabel 6950 4400 2    50   Input ~ 0
-R_1
-$Comp
-L TheListener:5VDC_1 #PWR0108
-U 1 1 5E20FC5F
-P 2350 4750
-F 0 "#PWR0108" H 2350 4600 50  0001 C CNN
-F 1 "5VDC_1" V 2368 4878 50  0000 L CNN
-F 2 "" H 2350 4750 50  0001 C CNN
-F 3 "" H 2350 4750 50  0001 C CNN
-	1    2350 4750
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Connector_Generic:Conn_02x05_Odd_Even J11
-U 1 1 5E1ACF9D
-P 6750 4600
-F 0 "J11" H 6800 5017 50  0000 C CNN
-F 1 "Conn_02x05_Odd_Even" H 6800 4926 50  0000 C CNN
-F 2 "TheListener:PinSocket_2x05_P2.54mm_Vertical_MinCrtYd" H 6750 4600 50  0001 C CNN
-F 3 "~" H 6750 4600 50  0001 C CNN
-	1    6750 4600
-	-1   0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR0101
-U 1 1 5E23361B
-P 6950 4600
-F 0 "#PWR0101" H 6950 4350 50  0001 C CNN
-F 1 "GND" V 6955 4472 50  0000 R CNN
-F 2 "" H 6950 4600 50  0001 C CNN
-F 3 "" H 6950 4600 50  0001 C CNN
-	1    6950 4600
-	0    -1   -1   0   
-$EndComp
-$Comp
-L power:GND #PWR0103
-U 1 1 5E233881
-P 4700 4600
-F 0 "#PWR0103" H 4700 4350 50  0001 C CNN
-F 1 "GND" V 4705 4472 50  0000 R CNN
-F 2 "" H 4700 4600 50  0001 C CNN
-F 3 "" H 4700 4600 50  0001 C CNN
-	1    4700 4600
+L power:+3.3V #PWR0101
+U 1 1 5E2AAE4A
+P 2650 5350
+F 0 "#PWR0101" H 2650 5200 50  0001 C CNN
+F 1 "+3.3V" V 2665 5478 50  0000 L CNN
+F 2 "" H 2650 5350 50  0001 C CNN
+F 3 "" H 2650 5350 50  0001 C CNN
+	1    2650 5350
 	0    1    1    0   
 $EndComp
 $Comp
-L power:GND #PWR0104
-U 1 1 5E2361E1
-P 4100 5750
-F 0 "#PWR0104" H 4100 5500 50  0001 C CNN
-F 1 "GND" V 4105 5622 50  0000 R CNN
-F 2 "" H 4100 5750 50  0001 C CNN
-F 3 "" H 4100 5750 50  0001 C CNN
-	1    4100 5750
-	0    1    -1   0   
+L power:+3.3V #PWR0102
+U 1 1 5E2AB377
+P 1450 2200
+F 0 "#PWR0102" H 1450 2050 50  0001 C CNN
+F 1 "+3.3V" V 1465 2328 50  0000 L CNN
+F 2 "" H 1450 2200 50  0001 C CNN
+F 3 "" H 1450 2200 50  0001 C CNN
+	1    1450 2200
+	0    1    1    0   
 $EndComp
-Wire Wire Line
-	4350 5500 4850 5500
-Wire Wire Line
-	4850 6100 4350 6100
-Wire Wire Line
-	4350 6100 4350 5850
-Wire Wire Line
-	4850 5850 4850 6100
 $Comp
-L Connector_Generic:Conn_02x02_Odd_Even J12
-U 1 1 5E23BE05
-P 5850 5750
-F 0 "J12" H 5900 5967 50  0000 C CNN
-F 1 "Conn_02x02_Odd_Even" H 5900 5876 50  0000 C CNN
-F 2 "TheListener:PinSocket_2x02_P2.54mm_Vertical_MinCrtYd" H 5850 5750 50  0001 C CNN
-F 3 "~" H 5850 5750 50  0001 C CNN
-	1    5850 5750
-	1    0    0    -1  
+L power:+3.3V #PWR0103
+U 1 1 5E2AB507
+P 1450 1750
+F 0 "#PWR0103" H 1450 1600 50  0001 C CNN
+F 1 "+3.3V" V 1465 1878 50  0000 L CNN
+F 2 "" H 1450 1750 50  0001 C CNN
+F 3 "" H 1450 1750 50  0001 C CNN
+	1    1450 1750
+	0    1    1    0   
 $EndComp
-Wire Wire Line
-	5650 5750 5650 5500
-Wire Wire Line
-	5650 5500 6150 5500
-Wire Wire Line
-	6150 5500 6150 5750
-Wire Wire Line
-	6150 6100 5650 6100
-Wire Wire Line
-	5650 6100 5650 5850
-Wire Wire Line
-	6150 5850 6150 6100
-Wire Wire Line
-	5400 5750 5650 5750
 $Comp
-L power:GND #PWR0105
-U 1 1 5E23BDFE
-P 5400 5750
-F 0 "#PWR0105" H 5400 5500 50  0001 C CNN
-F 1 "GND" V 5405 5622 50  0000 R CNN
-F 2 "" H 5400 5750 50  0001 C CNN
-F 3 "" H 5400 5750 50  0001 C CNN
-	1    5400 5750
-	0    1    -1   0   
+L power:+3.3V #PWR0104
+U 1 1 5E2AB697
+P 1450 1300
+F 0 "#PWR0104" H 1450 1150 50  0001 C CNN
+F 1 "+3.3V" V 1465 1428 50  0000 L CNN
+F 2 "" H 1450 1300 50  0001 C CNN
+F 3 "" H 1450 1300 50  0001 C CNN
+	1    1450 1300
+	0    1    1    0   
 $EndComp
-Connection ~ 5650 5750
-Wire Wire Line
-	5400 5850 5650 5850
 $Comp
-L TheListener:5VDC_1 #PWR0109
-U 1 1 5E23D87C
-P 5400 5850
-F 0 "#PWR0109" H 5400 5700 50  0001 C CNN
-F 1 "5VDC_1" V 5418 5978 50  0000 L CNN
-F 2 "" H 5400 5850 50  0001 C CNN
-F 3 "" H 5400 5850 50  0001 C CNN
-	1    5400 5850
+L power:+3.3V #PWR0105
+U 1 1 5E2ABA0F
+P 1450 850
+F 0 "#PWR0105" H 1450 700 50  0001 C CNN
+F 1 "+3.3V" V 1465 978 50  0000 L CNN
+F 2 "" H 1450 850 50  0001 C CNN
+F 3 "" H 1450 850 50  0001 C CNN
+	1    1450 850 
+	0    1    1    0   
+$EndComp
+Text GLabel 3750 6650 0    50   Input ~ 0
+T_2
+$Comp
+L power:+5V #PWR064
+U 1 1 5E2820A0
+P 3750 6950
+F 0 "#PWR064" H 3750 6800 50  0001 C CNN
+F 1 "+5V" V 3765 7078 50  0000 L CNN
+F 2 "" H 3750 6950 50  0001 C CNN
+F 3 "" H 3750 6950 50  0001 C CNN
+	1    3750 6950
 	0    -1   1    0   
 $EndComp
-Connection ~ 5650 5850
-Connection ~ 5400 5850
 $Comp
-L power:PWR_FLAG #FLG0103
-U 1 1 5E23BDF1
-P 5400 5850
-F 0 "#FLG0103" H 5400 5925 50  0001 C CNN
-F 1 "PWR_FLAG" H 5400 6023 50  0000 C CNN
-F 2 "" H 5400 5850 50  0001 C CNN
-F 3 "~" H 5400 5850 50  0001 C CNN
-	1    5400 5850
-	1    0    0    1   
-$EndComp
-Connection ~ 4350 5850
-Wire Wire Line
-	4850 5500 4850 5750
-Wire Wire Line
-	4350 5750 4350 5500
-$Comp
-L Connector_Generic:Conn_02x02_Odd_Even J9
-U 1 1 5E237EE5
-P 4550 5750
-F 0 "J9" H 4600 5967 50  0000 C CNN
-F 1 "Conn_02x02_Odd_Even" H 4600 5876 50  0000 C CNN
-F 2 "TheListener:PinSocket_2x02_P2.54mm_Vertical_MinCrtYd" H 4550 5750 50  0001 C CNN
-F 3 "~" H 4550 5750 50  0001 C CNN
-	1    4550 5750
-	1    0    0    -1  
-$EndComp
-Connection ~ 5950 4600
-Wire Wire Line
-	5950 4600 5200 4600
-Wire Wire Line
-	5950 4600 6450 4600
-Wire Wire Line
-	4100 5850 4350 5850
-$Comp
-L power:GND #PWR0102
+L power:GND #PWR058
 U 1 1 5E1B7B33
-P 5950 4600
-F 0 "#PWR0102" H 5950 4350 50  0001 C CNN
-F 1 "GND" H 5955 4427 50  0000 C CNN
-F 2 "" H 5950 4600 50  0001 C CNN
-F 3 "" H 5950 4600 50  0001 C CNN
-	1    5950 4600
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:PWR_FLAG #FLG0102
-U 1 1 5E223084
-P 4100 5750
-F 0 "#FLG0102" H 4100 5825 50  0001 C CNN
-F 1 "PWR_FLAG" H 4100 5923 50  0000 C CNN
-F 2 "" H 4100 5750 50  0001 C CNN
-F 3 "~" H 4100 5750 50  0001 C CNN
-	1    4100 5750
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4100 5750 4350 5750
-$Comp
-L TheListener:5VDC_2 #PWR0107
-U 1 1 5E20F1A0
-P 2350 5200
-F 0 "#PWR0107" H 2350 5050 50  0001 C CNN
-F 1 "5VDC_2" V 2368 5328 50  0000 L CNN
-F 2 "" H 2350 5200 50  0001 C CNN
-F 3 "" H 2350 5200 50  0001 C CNN
-	1    2350 5200
-	0    -1   -1   0   
-$EndComp
-$Comp
-L TheListener:VCC2 #PWR010
-U 1 1 5E15D053
-P 2850 5200
-F 0 "#PWR010" H 2850 5050 50  0001 C CNN
-F 1 "VCC2" V 2867 5328 50  0000 L CNN
-F 2 "" H 2850 5200 50  0001 C CNN
-F 3 "" H 2850 5200 50  0001 C CNN
-	1    2850 5200
-	0    1    1    0   
-$EndComp
-$Comp
-L power:PWR_FLAG #FLG0101
-U 1 1 5E210A09
-P 4100 5850
-F 0 "#FLG0101" H 4100 5925 50  0001 C CNN
-F 1 "PWR_FLAG" H 4100 6023 50  0000 C CNN
-F 2 "" H 4100 5850 50  0001 C CNN
-F 3 "~" H 4100 5850 50  0001 C CNN
-	1    4100 5850
-	1    0    0    1   
-$EndComp
-Connection ~ 4100 5850
-$Comp
-L TheListener:5VDC_2 #PWR0106
-U 1 1 5E20D748
-P 4100 5850
-F 0 "#PWR0106" H 4100 5700 50  0001 C CNN
-F 1 "5VDC_2" V 4118 5978 50  0000 L CNN
-F 2 "" H 4100 5850 50  0001 C CNN
-F 3 "" H 4100 5850 50  0001 C CNN
-	1    4100 5850
-	0    -1   1    0   
-$EndComp
-$Comp
-L Jumper:SolderJumper_2_Open JP1
-U 1 1 5E23714A
-P 5000 6650
-F 0 "JP1" V 4954 6718 50  0000 L CNN
-F 1 "SolderJumper_2_Open" V 5045 6718 50  0000 L CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm" V 4930 6650 50  0001 C CNN
-F 3 "~" H 5000 6650 50  0001 C CNN
-	1    5000 6650
-	1    0    0    -1  
-$EndComp
-$Comp
-L TheListener:5VDC_2 #PWR0110
-U 1 1 5E2391E4
-P 4850 6650
-F 0 "#PWR0110" H 4850 6500 50  0001 C CNN
-F 1 "5VDC_2" V 4868 6778 50  0000 L CNN
-F 2 "" H 4850 6650 50  0001 C CNN
-F 3 "" H 4850 6650 50  0001 C CNN
-	1    4850 6650
-	0    -1   1    0   
-$EndComp
-$Comp
-L TheListener:5VDC_1 #PWR0111
-U 1 1 5E239CBC
-P 5150 6650
-F 0 "#PWR0111" H 5150 6500 50  0001 C CNN
-F 1 "5VDC_1" V 5168 6778 50  0000 L CNN
-F 2 "" H 5150 6650 50  0001 C CNN
-F 3 "" H 5150 6650 50  0001 C CNN
-	1    5150 6650
+P 3750 6450
+F 0 "#PWR058" H 3750 6200 50  0001 C CNN
+F 1 "GND" H 3755 6277 50  0000 C CNN
+F 2 "" H 3750 6450 50  0001 C CNN
+F 3 "" H 3750 6450 50  0001 C CNN
+	1    3750 6450
 	0    1    -1   0   
 $EndComp
+Text GLabel 3750 6550 0    50   Input ~ 0
+T_1
+Text GLabel 4250 6850 2    50   Input ~ 0
+T_4
+Text GLabel 4250 6750 2    50   Input ~ 0
+T_3
+Connection ~ 4250 6450
+Connection ~ 3750 6450
 $EndSCHEMATC
