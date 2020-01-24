@@ -173,12 +173,12 @@ F 3 "~" H 5100 4650 50  0001 C CNN
 	1    0    0    1   
 $EndComp
 $Comp
-L Connector_Generic:Conn_02x06_Odd_Even J5
+L Connector_Generic:Conn_02x10_Odd_Even J5
 U 1 1 5E29C9A5
 P 4500 4550
 F 0 "J5" H 4550 4967 50  0000 C CNN
-F 1 "Conn_02x06_Odd_Even" H 4550 4876 50  0000 C CNN
-F 2 "Connector_IDC:IDC-Header_2x06_P2.54mm_Vertical" H 4500 4550 50  0001 C CNN
+F 1 "Conn_02x10_Odd_Even" H 4550 4876 50  0000 C CNN
+F 2 "Connector_IDC:IDC-Header_2x10_P2.54mm_Vertical" H 4500 4550 50  0001 C CNN
 F 3 "~" H 4500 4550 50  0001 C CNN
 	1    4500 4550
 	-1   0    0    -1  
@@ -210,15 +210,15 @@ $EndComp
 Connection ~ 5100 4650
 Wire Wire Line
 	5100 4650 4700 4650
-Text GLabel 4700 4850 2    50   Input ~ 0
+Text GLabel 4700 4950 2    50   Input ~ 0
 T_1
 Text GLabel 4700 4750 2    50   Input ~ 0
 T_2
-Text GLabel 4700 4350 2    50   Input ~ 0
+Text GLabel 4700 4250 2    50   Input ~ 0
 R_4
 Text GLabel 4700 4450 2    50   Input ~ 0
 R_3
-Text GLabel 4200 4350 0    50   Input ~ 0
+Text GLabel 4200 4250 0    50   Input ~ 0
 T_4
 Text GLabel 4200 4450 0    50   Input ~ 0
 T_3
@@ -233,30 +233,15 @@ F 3 "" H 4200 4550 50  0001 C CNN
 	1    4200 4550
 	0    1    1    0   
 $EndComp
-Text GLabel 4200 4850 0    50   Input ~ 0
+Text GLabel 4200 4950 0    50   Input ~ 0
 R_1
 Text GLabel 4200 4750 0    50   Input ~ 0
 R_2
 Connection ~ 3800 4650
-$Comp
-L Connector_Generic:Conn_02x06_Odd_Even J6
-U 1 1 5E2AA0CD
-P 6650 4600
-F 0 "J6" H 6700 5017 50  0000 C CNN
-F 1 "Conn_02x06_Odd_Even" H 6700 4926 50  0000 C CNN
-F 2 "Connector_IDC:IDC-Header_2x06_P2.54mm_Vertical" H 6650 4600 50  0001 C CNN
-F 3 "~" H 6650 4600 50  0001 C CNN
-	1    6650 4600
-	1    0    0    -1  
-$EndComp
-NoConn ~ 6450 4400
 NoConn ~ 6450 4500
 NoConn ~ 6450 4800
-NoConn ~ 6450 4900
-NoConn ~ 6950 4900
 NoConn ~ 6950 4800
 NoConn ~ 6950 4500
-NoConn ~ 6950 4400
 $Comp
 L power:+5V #PWR037
 U 1 1 5E2AD34E
@@ -292,8 +277,6 @@ F 3 "" H 6050 4700 50  0001 C CNN
 	1    6050 4700
 	0    -1   -1   0   
 $EndComp
-Wire Wire Line
-	6050 4700 6450 4700
 $Comp
 L power:GND #PWR036
 U 1 1 5E2AF74F
@@ -348,5 +331,198 @@ F 2 "MountingHole:MountingHole_3.2mm_M3" H 6100 3600 50  0001 C CNN
 F 3 "~" H 6100 3600 50  0001 C CNN
 	1    6100 3600
 	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0101
+U 1 1 5E295D08
+P 4200 4150
+F 0 "#PWR0101" H 4200 3900 50  0001 C CNN
+F 1 "GND" V 4205 4022 50  0000 R CNN
+F 2 "" H 4200 4150 50  0001 C CNN
+F 3 "" H 4200 4150 50  0001 C CNN
+	1    4200 4150
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR0102
+U 1 1 5E2960F5
+P 4200 4350
+F 0 "#PWR0102" H 4200 4100 50  0001 C CNN
+F 1 "GND" V 4205 4222 50  0000 R CNN
+F 2 "" H 4200 4350 50  0001 C CNN
+F 3 "" H 4200 4350 50  0001 C CNN
+	1    4200 4350
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR0103
+U 1 1 5E296871
+P 4700 4150
+F 0 "#PWR0103" H 4700 3900 50  0001 C CNN
+F 1 "GND" V 4705 4022 50  0000 R CNN
+F 2 "" H 4700 4150 50  0001 C CNN
+F 3 "" H 4700 4150 50  0001 C CNN
+	1    4700 4150
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR0104
+U 1 1 5E296A71
+P 4700 4350
+F 0 "#PWR0104" H 4700 4100 50  0001 C CNN
+F 1 "GND" V 4705 4222 50  0000 R CNN
+F 2 "" H 4700 4350 50  0001 C CNN
+F 3 "" H 4700 4350 50  0001 C CNN
+	1    4700 4350
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR0105
+U 1 1 5E2970A0
+P 4700 4850
+F 0 "#PWR0105" H 4700 4600 50  0001 C CNN
+F 1 "GND" V 4705 4722 50  0000 R CNN
+F 2 "" H 4700 4850 50  0001 C CNN
+F 3 "" H 4700 4850 50  0001 C CNN
+	1    4700 4850
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR0106
+U 1 1 5E2972B1
+P 4700 5050
+F 0 "#PWR0106" H 4700 4800 50  0001 C CNN
+F 1 "GND" V 4705 4922 50  0000 R CNN
+F 2 "" H 4700 5050 50  0001 C CNN
+F 3 "" H 4700 5050 50  0001 C CNN
+	1    4700 5050
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR0107
+U 1 1 5E297AF9
+P 4200 5050
+F 0 "#PWR0107" H 4200 4800 50  0001 C CNN
+F 1 "GND" V 4205 4922 50  0000 R CNN
+F 2 "" H 4200 5050 50  0001 C CNN
+F 3 "" H 4200 5050 50  0001 C CNN
+	1    4200 5050
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR0108
+U 1 1 5E297F5D
+P 4200 4850
+F 0 "#PWR0108" H 4200 4600 50  0001 C CNN
+F 1 "GND" V 4205 4722 50  0000 R CNN
+F 2 "" H 4200 4850 50  0001 C CNN
+F 3 "" H 4200 4850 50  0001 C CNN
+	1    4200 4850
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector_Generic:Conn_02x10_Odd_Even J6
+U 1 1 5E2AA0CD
+P 6750 4600
+F 0 "J6" H 6800 5017 50  0000 C CNN
+F 1 "Conn_02x10_Odd_Even" H 6800 4926 50  0000 C CNN
+F 2 "Connector_IDC:IDC-Header_2x10_P2.54mm_Vertical" H 6750 4600 50  0001 C CNN
+F 3 "~" H 6750 4600 50  0001 C CNN
+	1    6750 4600
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	6050 4700 6450 4700
+NoConn ~ 6450 5000
+NoConn ~ 6950 5000
+NoConn ~ 6450 4300
+NoConn ~ 6950 4300
+$Comp
+L power:GND #PWR?
+U 1 1 5E2A248C
+P 6450 4200
+F 0 "#PWR?" H 6450 3950 50  0001 C CNN
+F 1 "GND" V 6455 4072 50  0000 R CNN
+F 2 "" H 6450 4200 50  0001 C CNN
+F 3 "" H 6450 4200 50  0001 C CNN
+	1    6450 4200
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E2A27E0
+P 6450 4400
+F 0 "#PWR?" H 6450 4150 50  0001 C CNN
+F 1 "GND" V 6455 4272 50  0000 R CNN
+F 2 "" H 6450 4400 50  0001 C CNN
+F 3 "" H 6450 4400 50  0001 C CNN
+	1    6450 4400
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E2A2BCD
+P 6450 4900
+F 0 "#PWR?" H 6450 4650 50  0001 C CNN
+F 1 "GND" V 6455 4772 50  0000 R CNN
+F 2 "" H 6450 4900 50  0001 C CNN
+F 3 "" H 6450 4900 50  0001 C CNN
+	1    6450 4900
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E2A2EEE
+P 6450 5100
+F 0 "#PWR?" H 6450 4850 50  0001 C CNN
+F 1 "GND" V 6455 4972 50  0000 R CNN
+F 2 "" H 6450 5100 50  0001 C CNN
+F 3 "" H 6450 5100 50  0001 C CNN
+	1    6450 5100
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E2A3549
+P 6950 5100
+F 0 "#PWR?" H 6950 4850 50  0001 C CNN
+F 1 "GND" V 6955 4972 50  0000 R CNN
+F 2 "" H 6950 5100 50  0001 C CNN
+F 3 "" H 6950 5100 50  0001 C CNN
+	1    6950 5100
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E2A397A
+P 6950 4900
+F 0 "#PWR?" H 6950 4650 50  0001 C CNN
+F 1 "GND" V 6955 4772 50  0000 R CNN
+F 2 "" H 6950 4900 50  0001 C CNN
+F 3 "" H 6950 4900 50  0001 C CNN
+	1    6950 4900
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E2A3DCD
+P 6950 4400
+F 0 "#PWR?" H 6950 4150 50  0001 C CNN
+F 1 "GND" V 6955 4272 50  0000 R CNN
+F 2 "" H 6950 4400 50  0001 C CNN
+F 3 "" H 6950 4400 50  0001 C CNN
+	1    6950 4400
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E2A423F
+P 6950 4200
+F 0 "#PWR?" H 6950 3950 50  0001 C CNN
+F 1 "GND" V 6955 4072 50  0000 R CNN
+F 2 "" H 6950 4200 50  0001 C CNN
+F 3 "" H 6950 4200 50  0001 C CNN
+	1    6950 4200
+	0    -1   -1   0   
 $EndComp
 $EndSCHEMATC
