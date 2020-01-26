@@ -1,74 +1,103 @@
-#include "WiFi.h"
-#include "AsyncUDP.h"
+#include <WiFi.h>
+#include <AsyncUDP.h>
 
-const char * ssid = "esp32-00";
-const char * password = "72sjwscrkd8";
+const char *ssid = "esp32-00";
+const char *password = "72sjwscrkd8";
 
 AsyncUDP udp;
-unsigned long outlier_ct = 0, sum_delta = 0, delta_ct = 0;
-unsigned long sum_error = 0, error_ct = 0;
-unsigned long server_echo = 0, server_error = 0, server_now = 0;
-unsigned long clock_offset = 0;
-#define ERROR_LIMIT 2000 //(2000us, 2ms)
+int32_t rtt = 0, clock_offset = 0;
+uint8_t avg_ct = 0;
+#define SAMPLE_CT 20
+int32_t samples[SAMPLE_CT][2] = {
+  {0,0},{0,0},{0,0},{0,0},{0,0},
+  {0,0},{0,0},{0,0},{0,0},{0,0}
+};
+bool waiting_for_server = false;
 
-void setup()
-{
-    Serial.begin(115200);
-    delay(1000);
-    WiFi.disconnect(true);
-    delay(1000);
-    WiFi.mode(WIFI_STA);
-    WiFi.begin(ssid, password);
-    while (WiFi.status() != WL_CONNECTED) {
-        Serial.println("WiFi Failed");
-        delay(500);
-    }
-    if(udp.listen(1234)) {
-        Serial.print("UDP Listening on IP: ");
-        Serial.println(WiFi.localIP());
-        udp.onPacket([](AsyncUDPPacket packet) {
-            unsigned long now = micros();
-            
-            String packet_str = String((const char*) packet.data());
-            if (packet_str.startsWith("error:")) {
-              server_error = packet_str.substring(6).toInt();
-            } else if (packet_str.startsWith("now:")) {
-              server_now = packet_str.substring(4).toInt();
-            } else if (packet_str.startsWith("check:")) {
-              uint8_t check = (server_echo + server_error + server_now) % 255;
-              if (check != packet_str.substring(6).toInt()) {
-                Serial.printf("checksum failed (%s): %d %d %d %d\n", packet_str, server_echo, server_error, server_now, check);
-                server_echo = 0;
-                server_error = 0;
-                server_now = 0;
-              } else {
-                unsigned long delta = now - server_echo;
-                Serial.printf("now, server_echo, server_error, server_now %d\t %d\t %d\t %d\n", now, server_echo, server_error, server_now);
-                clock_offset += server_error;
-                sum_delta += delta;
-                delta_ct++;
-                unsigned long avg_delta = sum_delta / delta_ct;
-                unsigned long error = abs(delta - avg_delta);
-                sum_error += error;
-                error_ct++;
-                if (error > ERROR_LIMIT) {
-                  outlier_ct++;
-                }
-                //Serial.printf("rtt (cur, avg, outliers): %d %d %d\n", delta, avg_delta, outlier_ct);
-              }
-            } else {
-              server_echo = packet_str.toInt();
-              server_error = 0;
-              server_now = 0;
-            }
-        });
-    }
+template<typename T>
+int cmp(const void *arg1, const void *arg2) {
+  T* a = (T*) arg1;
+  T* b = (T*) arg2;
+  if ((*a)[1] < (*b)[1]) return -1;
+  if ((*a)[1] > (*b)[1]) return 1;
+  return 0;
 }
 
-void loop()
-{
-    delay(1000);
-    //Send broadcast
-    String now = String(micros() + clock_offset);
-    udp.broadcast((const char*) now.c_str());
+void setup() {
+  Serial.begin(115200);
+  WiFi.disconnect(true);
+  WiFi.mode(WIFI_STA);
+  WiFi.begin(ssid, password);
+  delay(400);
+  while (WiFi.status() != WL_CONNECTED) {
+    Serial.println("WiFi Failed");
+    delay(100);
+  }
+
+  if (udp.connect(WiFi.gatewayIP(), 1234)) {
+    Serial.print("UDP Listening on IP: ");
+    Serial.println(WiFi.localIP());
+    udp.onPacket([](AsyncUDPPacket packet) {
+      uint32_t t_local = micros();
+      uint32_t t_server = *((uint32_t*) packet.data());
+
+      if (packet.length() != 4) {
+        return;
+      }
+      if (!waiting_for_server) {
+        return;
+      }
+
+      // t1
+      //clock_offset += t_server/2;
+      //rtt += t_server;
+
+      // t2
+      //clock_offset += t_server/2;
+      //rtt -= t_server;
+      
+      clock_offset += t_server;
+
+      // t3
+      clock_offset -= t_local/2;
+      rtt += t_local;
+
+      //Serial.printf("offset, rtt %d\t %d\n", clock_offset, rtt);
+      samples[avg_ct][0] = clock_offset;
+      samples[avg_ct][1] = rtt;
+      avg_ct++;
+      if (avg_ct == SAMPLE_CT) {
+        avg_ct = 0;
+        clock_offset = 0;
+        rtt = 0;
+        qsort(&samples, SAMPLE_CT, sizeof(int32_t[2]), cmp<int32_t[2]>);
+        for (int i=SAMPLE_CT/2-2; i<SAMPLE_CT/2+2; i++) {
+          clock_offset += samples[i][0]/4;
+          rtt += samples[i][1]/4;
+        }
+        for (int i=0; i<SAMPLE_CT; i++) {
+          Serial.printf("offset, rtt %d\t %d\n", samples[i][0], samples[i][1]);
+        }
+        Serial.printf("AVG offset, rtt %d\t %d\n", clock_offset, rtt);
+      }
+      waiting_for_server = false;
+    });
+  }
+}
+
+void loop() {
+  uint32_t t;
+  if (waiting_for_server) {
+    delay(10);
+  } else {
+    delay(50);
+
+    t = micros();
+    udp.write((uint8_t*) (&t), 4);
+
+    waiting_for_server = true;
+    // t0
+    clock_offset = -t/2;
+    rtt = -t;
+  }
 }
