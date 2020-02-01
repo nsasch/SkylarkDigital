@@ -83,10 +83,13 @@ void setup() {
         Serial.println("ERR bad packet length");
         return;
       }
-      uint8_t t_0_echo = packet.read();
-      uint32_t t_server = *(packet.data() + 1);
+      uint8_t t_0_echo = packet.read();  // LSB
+      uint32_t t_server = *((uint32_t*)(packet.data() + 1));  // 4-byte int, little-endian
 
-      
+      if (t_0_echo != (t_0 & 0xFF)) {
+        Serial.printf("ERR expected echo of %u (LSB: %u) but got %u\n", t_0, t_0 & 0xFF, t_0_echo);
+        return;
+      }
       if (missing_packets) {Serial.printf("ERR packet %u isr_micros %u\n", t_server, isr_micros);}
       if (!t_0) {
         Serial.printf("ERR unexpected packet (%u, %u)\n", t_server, t_local);
@@ -140,7 +143,7 @@ void loop() {
     isr_micros = EXPECTING_ISR;
     //portEXIT_CRITICAL(&mux);
 
-    udp.write((uint8_t*) (&t_0), 4);
+    udp.write((uint8_t*) (&t_0), 4);  // 4-byte int, little-endian
     //Serial.printf("Sent packet at %u\n", t_0);
   }
 }
