@@ -57,21 +57,26 @@ void setup() {
     udp.onPacket([](AsyncUDPPacket packet) {
       //portENTER_CRITICAL(&mux);
       packet_recv_micros = micros();
+      uint32_t isr_micros_tmp = isr_micros;
       isr_micros = EXPECTING_ISR;
       digitalWrite(TX_PIN, LOW);
       //portEXIT_CRITICAL(&mux);
       if (packet.length() != 4) {
-        Serial.println("ERR bad packet length");
+        Serial.printf("ERR bad packet length %u\r\n", packet.length());
       }
       uint8_t data[5];
       data[0] = ((uint32_t*) packet.data())[0] & 0xFF;  // LSB
       *((uint32_t*) (data + 1)) = packet_recv_micros;   // 4-byte int, little-endian
+      const uint32_t t_write_start = micros();
       packet.write(data, 5);
+      //Serial.printf("replied to %u (LSB %u) at %u\r\n", ((uint32_t*) packet.data())[0], ((uint32_t*) packet.data())[0] & 0xFF, packet_recv_micros);
 
       const int32_t t_low = micros() - packet_recv_micros;
-      if (t_low < 500) {
-        // leave TX low for ~500us
-        delayMicroseconds(500 - t_low);
+      //Serial.printf("handling packet for %u, write took %u\r\n", micros() - packet_recv_micros, micros() - t_write_start);
+      if (t_low < 200) {
+        Serial.printf("have to wait %u\r\n", 200-t_low);
+        // leave TX low for ~200us
+        delayMicroseconds(200 - t_low);
       }
       digitalWrite(TX_PIN, HIGH);
     });
@@ -81,11 +86,12 @@ void setup() {
 void loop() {
   //portENTER_CRITICAL(&mux);
   if (isr_micros != NOT_EXPECTING_ISR && isr_micros != EXPECTING_ISR) {
+    uint32_t isr_micros_tmp = isr_micros;
     isr_micros = NOT_EXPECTING_ISR;
     //portEXIT_CRITICAL(&mux);
-    Serial.printf("Sent/Recv ISR: %u (%u->%u)\n", isr_micros - packet_recv_micros, packet_recv_micros, isr_micros);
+    //Serial.printf("Sent/Recv ISR: %u (%u->%u)\r\n", isr_micros - packet_recv_micros, packet_recv_micros, isr_micros_tmp);
   } else {
     //portEXIT_CRITICAL(&mux);
-    delay(1);
+    delay(10);
   }
 }

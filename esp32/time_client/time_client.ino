@@ -14,6 +14,7 @@ AsyncUDP udp;
 portMUX_TYPE mux = portMUX_INITIALIZER_UNLOCKED;
 
 volatile int64_t clock_offset = 0;
+volatile int64_t clock_offset2 = 0;
 
 volatile uint32_t t_0 = 0;
 volatile uint32_t isr_micros = NOT_EXPECTING_ISR;
@@ -51,24 +52,49 @@ void init_wifi() {
 }
 
 void print_heap() {
-  Serial.printf("Heap (min, cur, max block): %u\t%u\t%u\n", esp_get_minimum_free_heap_size(), esp_get_free_heap_size(), heap_caps_get_largest_free_block(MALLOC_CAP_8BIT));
+  static uint32_t min_free = 0, cur_free = 0, largest_block = 0;
+  uint32_t tmp;
+  bool changed = false;
+  tmp = esp_get_minimum_free_heap_size();
+  if (tmp != min_free) {
+    min_free = tmp;
+    changed = true;
+  }
+  tmp = esp_get_free_heap_size();
+  if (tmp != cur_free) {
+    cur_free = tmp;
+    changed = true;
+  }
+  tmp = heap_caps_get_largest_free_block(MALLOC_CAP_8BIT);
+  if (tmp != largest_block) {
+    largest_block = tmp;
+    changed = true;
+  }
+  if (changed) {
+    Serial.printf("Heap (min, cur, max block): %u\t%u\t%u\r\n", min_free, cur_free, largest_block);
+  }
 }
 
 void setup() {
   Serial.begin(115200);
   WiFi.disconnect(true);
   WiFi.mode(WIFI_STA);
+  WiFi.persistent(false);
   esp_wifi_set_ps(WIFI_PS_NONE);
+  print_heap();
   init_wifi();
-
+  Serial.printf("CONFIG_ESP32_WIFI_AMPDU_TX_ENABLED: %u\r\n", CONFIG_ESP32_WIFI_AMPDU_TX_ENABLED);
   pinMode(RX_PIN, INPUT_PULLUP);
   pinMode(TX_PIN, OUTPUT);
   digitalWrite(TX_PIN, HIGH);
   attachInterrupt(RX_PIN, isr, FALLING);
+  print_heap();
 
   if (udp.connect(WiFi.gatewayIP(), 1234)) {
     Serial.print("UDP Listening on IP: ");
     Serial.println(WiFi.localIP());
+    print_heap();
+
     udp.onPacket([](AsyncUDPPacket packet) {
       static uint8_t sample_ct = 0;
       static int64_t samples[MAX_SAMPLES][2] = {
@@ -80,30 +106,29 @@ void setup() {
 
       uint32_t t_local = micros();
       if (packet.length() != 5) {
-        Serial.println("ERR bad packet length");
+        Serial.printf("ERR bad packet length %u\r\n", packet.length());
         return;
       }
       uint8_t t_0_echo = packet.read();  // LSB
       uint32_t t_server = *((uint32_t*)(packet.data() + 1));  // 4-byte int, little-endian
 
       if (t_0_echo != (t_0 & 0xFF)) {
-        Serial.printf("ERR expected echo of %u (LSB: %u) but got %u\n", t_0, t_0 & 0xFF, t_0_echo);
-        return;
-      }
-      if (missing_packets) {Serial.printf("ERR packet %u isr_micros %u\n", t_server, isr_micros);}
-      if (!t_0) {
-        Serial.printf("ERR unexpected packet (%u, %u)\n", t_server, t_local);
-        missing_packets--;
+        Serial.printf("ERR expected echo of %u (LSB: %u) but got %u w/ server time %u (~%d)\r\n", t_0, t_0 & 0xFF, t_0_echo, t_server, (int64_t)t_server - clock_offset);
         return;
       }
       
-      //Serial.printf("delta: %lld\t (%llu, %u)\n", (isr_micros + clock_offset) - (t_server + 10), isr_micros + clock_offset, t_server + 10);
-      //Serial.printf("%u %u %u\n", t_0, isr_micros, t_server);
+      //Serial.printf("delta: %lld\t (%llu, %u)\r\n", (isr_micros + clock_offset) - (t_server + 10), isr_micros + clock_offset, t_server + 10);
+      //Serial.printf("%u %u %u\r\n", t_0, isr_micros, t_server);
 
       samples[sample_ct][0] = t_server - t_local/2 - t_0/2;
       samples[sample_ct][1] = t_local - t_0;
-      sample_ct++;      
+      if (!clock_offset2) {
+        clock_offset2 = samples[sample_ct][0];
+      } else {
+        clock_offset2 += constrain((samples[sample_ct][0] - clock_offset2)/4, -127, 127);
+      }
 
+      sample_ct++;
       if (sample_ct == MAX_SAMPLES) {
         sample_ct = 0;
         qsort(&samples, MAX_SAMPLES, sizeof(int64_t[2]), cmp<int64_t[2]>);
@@ -114,7 +139,8 @@ void setup() {
         //portENTER_CRITICAL(&mux);
         clock_offset = new_offset;
         //portEXIT_CRITICAL(&mux);
-        Serial.printf("avg(offsets from packets w/ 4 lowest RTTs): %lld\n", clock_offset);
+        Serial.printf("avg(offsets from packets w/ 4 lowest RTTs): %lld (lowest RTT: %lld)\r\n", clock_offset, samples[0][1]);
+        Serial.printf("new formula: %lld\r\n", clock_offset2);
       }
       //portENTER_CRITICAL(&mux);
       t_0 = 0;
@@ -130,12 +156,11 @@ void loop() {
     init_wifi();
   }
   if (t_0 && micros() - t_0 < 15000000) {
-    delay(1);
+    delay(10);
   } else {
     print_heap();
     if (t_0 && micros() - t_0 > 50000) {
-      Serial.printf("Slow response: sent at: %u, isr_micros: %u, now: %lu\n", t_0, isr_micros, micros());
-      missing_packets++;
+      Serial.printf("Slow response: sent at: %u (LSB: %u), isr_micros: %u, now: %lu\r\n", t_0, t_0 & 0xFF, isr_micros, micros());
     }
     //delay(100);
     //portENTER_CRITICAL(&mux);
@@ -144,6 +169,7 @@ void loop() {
     //portEXIT_CRITICAL(&mux);
 
     udp.write((uint8_t*) (&t_0), 4);  // 4-byte int, little-endian
-    //Serial.printf("Sent packet at %u\n", t_0);
+    //Serial.printf("Sending took %u\r\n", micros() - t_0);
+    //Serial.printf("Sent packet at %u\r\n", t_0);
   }
 }
